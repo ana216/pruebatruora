@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consultar información de un dominio"
+                    android:textStyle="bold"
+                    android:textColor="#006666"
+                    android:textSize="20sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:id="@+id/text_domainName_info"
+                android:background="@drawable/forma_edit_text"
+                android:padding="8dp"
+                android:hint="Ingrese dominio a consultar"
+                android:minLines="6"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:id="@+id/text_server_domain"
+                android:padding="8dp"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Obtener información"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/btn_select_all_server"
+                android:textColor="@color/colorPrimaryText"
+                android:background="@drawable/button_login"
+                />
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Consultar historial"
+                    android:textStyle="bold"
+                    android:textColor="#006666"
+                    android:textSize="20sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:id="@+id/text_review_history"
+                android:padding="8dp"
+                />
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Revisar historial"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/btn_search_history"
+                android:textColor="@color/colorPrimaryText"
+                android:background="@drawable/button_login"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
