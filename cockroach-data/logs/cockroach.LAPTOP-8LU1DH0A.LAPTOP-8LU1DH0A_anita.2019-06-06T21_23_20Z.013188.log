@@ -1,0 +1,160 @@
+I190606 21:23:20.183619 1 util/log/clog.go:1199  [config] file created at: 2019/06/06 21:23:20
+I190606 21:23:20.183619 1 util/log/clog.go:1199  [config] running on machine: LAPTOP-8LU1DH0A
+I190606 21:23:20.183619 1 util/log/clog.go:1199  [config] binary: CockroachDB CCL v19.1.1 (x86_64-w64-mingw32, built 2019/05/15 20:36:28, go1.11.6)
+I190606 21:23:20.183619 1 util/log/clog.go:1199  [config] arguments: [cockroach start --insecure]
+I190606 21:23:20.183619 1 util/log/clog.go:1199  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I190606 21:23:20.183616 1 cli/start.go:1033  logging to directory C:\Users\anita\cockroach-data\logs
+W190606 21:23:20.208299 1 cli/start.go:1068  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.1/secure-a-cluster.html
+W190606 21:23:20.287551 1 cli/start.go:944  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (3.0 GiB).
+W190606 21:23:20.287599 1 cli/start.go:957  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (3.0 GiB).
+I190606 21:23:20.287608 1 cli/start.go:1082  CockroachDB CCL v19.1.1 (x86_64-w64-mingw32, built 2019/05/15 20:36:28, go1.11.6)
+I190606 21:23:20.448172 1 server/config.go:386  system total memory: 12 GiB
+I190606 21:23:20.448228 1 server/config.go:388  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I190606 21:23:20.448255 1 cli/start.go:929  process identity: uid S-1-5-21-1277130278-1379351995-3284735411-1001, gid S-1-5-21-1277130278-1379351995-3284735411-1001
+I190606 21:23:20.448921 1 cli/start.go:554  starting cockroach node
+I190606 21:23:20.515461 100 storage/engine/rocksdb.go:613  opening rocksdb instance at "C:\\Users\\anita\\cockroach-data\\cockroach-temp905249955"
+I190606 21:23:21.244971 100 server/server.go:879  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I190606 21:23:21.293283 100 storage/engine/rocksdb.go:613  opening rocksdb instance at "C:\\Users\\anita\\cockroach-data"
+I190606 21:23:22.248254 100 server/config.go:494  [n?] 1 storage engine initialized
+I190606 21:23:22.248272 100 server/config.go:497  [n?] RocksDB cache size: 128 MiB
+I190606 21:23:22.248281 100 server/config.go:497  [n?] store 0: RocksDB, max size 0 B, max open file limit 10000
+W190606 21:23:22.337746 100 cli/start.go:896  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "LAPTOP-8LU1DH0A" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I190606 21:23:22.395181 100 gossip/gossip.go:392  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"LAPTOP-8LU1DH0A:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:1 patch:0 unstable:0 > build_tag:"v19.1.1" started_at:1559856202374290300 
+W190606 21:23:22.530178 223 storage/replica_range_lease.go:506  can't determine lease status due to node liveness error: node not in the liveness table
+W190606 21:23:22.530285 223 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190606 21:23:22.557047 100 server/node.go:461  [n1] initialized store [n1,s1]: disk (capacity=930 GiB, available=808 GiB, used=14 MiB, logicalBytes=83 MiB), ranges=26, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=2752.00 p75=18024.00 p90=15963978.00 pMax=36629991.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+W190606 21:23:22.582774 223 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190606 21:23:22.611767 100 storage/stores.go:244  [n1] read 0 node addresses from persistent storage
+I190606 21:23:22.638425 100 server/node.go:699  [n1] connecting to gossip network to verify cluster ID...
+I190606 21:23:22.638485 100 server/node.go:719  [n1] node connected via gossip and verified as part of cluster "8ca7bf97-0dc5-4ba4-9c59-0796159e4e38"
+I190606 21:23:22.638703 100 server/node.go:542  [n1] node=1: started with [<no-attributes>=C:\Users\anita\cockroach-data] engine(s) and attributes []
+I190606 21:23:22.661994 100 server/server.go:1585  [n1] starting http server at [::]:8080 (use: LAPTOP-8LU1DH0A:8080)
+I190606 21:23:22.662013 100 server/server.go:1587  [n1] starting grpc/postgres server at [::]:26257
+I190606 21:23:22.662032 100 server/server.go:1588  [n1] advertising CockroachDB node at LAPTOP-8LU1DH0A:26257
+I190606 21:23:23.045569 100 server/server.go:1653  [n1] done ensuring all necessary migrations have run
+I190606 21:23:23.045586 100 server/server.go:1656  [n1] serving sql connections
+I190606 21:23:23.047475 100 cli/start.go:689  [config] clusterID: 8ca7bf97-0dc5-4ba4-9c59-0796159e4e38
+I190606 21:23:23.047513 100 cli/start.go:697  node startup completed:
+CockroachDB node starting at 2019-06-06 21:23:23.0473602 +0000 UTC (took 2.9s)
+build:               CCL v19.1.1 @ 2019/05/15 20:36:28 (go1.11.6)
+webui:               http://LAPTOP-8LU1DH0A:8080
+sql:                 postgresql://root@LAPTOP-8LU1DH0A:26257?sslmode=disable
+client flags:        cockroach <client cmd> --host=LAPTOP-8LU1DH0A:26257 --insecure
+logs:                C:\Users\anita\cockroach-data\logs
+temp dir:            C:\Users\anita\cockroach-data\cockroach-temp905249955
+external I/O path:   C:\Users\anita\cockroach-data\extern
+store[0]:            path=C:\Users\anita\cockroach-data
+status:              restarted pre-existing node
+clusterID:           8ca7bf97-0dc5-4ba4-9c59-0796159e4e38
+nodeID:              1
+I190606 21:23:23.533938 96 server/server_update.go:67  [n1] no need to upgrade, cluster already at the newest version
+I190606 21:23:23.803402 307 sql/event_log.go:135  [n1] Event: "node_restart", target: 1, info: {Descriptor:{NodeID:1 Address:LAPTOP-8LU1DH0A:26257 Attrs: Locality: ServerVersion:19.1 BuildTag:v19.1.1 StartedAt:1559856202374290300 LocalityAddress:[] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0} ClusterID:8ca7bf97-0dc5-4ba4-9c59-0796159e4e38 StartedAt:1559856202374290300 LastUp:1559773913874053400}
+I190606 21:23:24.024818 146 gossip/gossip.go:1510  [n1] node has connected to cluster via gossip
+I190606 21:23:24.024936 146 storage/stores.go:263  [n1] wrote 0 node addresses to persistent storage
+I190606 21:23:31.991735 372 storage/replica_consistency.go:198  [n1,consistencyChecker,s1,r41/1:/System{/tsd/cr.s…-tse}] triggering stats recomputation to resolve delta of {ContainsEstimates:true LastUpdateNanos:1559856202670714800 IntentAge:0 GCBytesAge:0 LiveBytes:18568787 LiveCount:-1872 KeyBytes:-93613 KeyCount:-1872 ValBytes:18662400 ValCount:-1872 IntentBytes:0 IntentCount:0 SysBytes:0 SysCount:0 XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}
+W190606 21:23:32.639785 56 server/status/runtime.go:423  [n1] unable to get file descriptor usage (will not try again): not implemented on windows
+I190606 21:23:32.642868 51 storage/store.go:4204  [n1,s1] sstables (read amplification = 2):
+0 [ 268K 1 ]: 268K
+6 [   9M 3 ]: 4M[2] 1M
+I190606 21:23:32.642999 51 storage/store.go:4205  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   268.39 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.9         0         1    0.292       0      0
+  L6      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+ Sum      4/0    9.73 MB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.9         0         1    0.292       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.9         0         1    0.292       0      0
+Uptime(secs): 11.3 total, 11.3 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.02 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.3 seconds
+Interval compaction: 0.00 GB write, 0.02 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.3 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I190606 21:23:32.941601 56 server/status/runtime.go:500  [n1] runtime stats: 110 MiB RSS, 176 goroutines, 94 MiB/2.9 MiB/111 MiB GO alloc/idle/total, 37 MiB/45 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (9x), 147 KiB/58 KiB (r/w)net
+I190606 21:23:33.614883 353 storage/replica_command.go:386  [n1,merge,s1,r54/1:/System/tsd/cr.{node.…-store…}] initiating a merge of r41:/System{/tsd/cr.store.queue.replicate.pending/1/10s/2019-06-03T12:00:00Z-tse} [(n1,s1):1, next=2, gen=1] into this range (lhs+rhs has (size=15 MiB+15 MiB qps=0.00+106.97 --> 106.97qps) below threshold (size=30 MiB, qps=106.97))
+W190606 21:23:34.983440 163 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 517.3656ms (>= warning threshold 500ms)
+W190606 21:23:35.077538 165 storage/store.go:3692  [n1,s1,r17/1:/Table/2{1-2}] handle raft ready: 0.6s [processed=1]
+W190606 21:23:35.077538 163 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190606 21:23:35.170275 164 storage/store.go:3692  [n1,s1,r9/1:/Table/1{3-4}] handle raft ready: 0.6s [processed=2]
+I190606 21:23:36.546861 281 storage/replica_consistency.go:198  [n1,consistencyChecker,s1,r4/1:/System/tsd{-/cr.nod…}] triggering stats recomputation to resolve delta of {ContainsEstimates:true LastUpdateNanos:1559856213376550200 IntentAge:0 GCBytesAge:0 LiveBytes:2459891 LiveCount:-930 KeyBytes:-45393 KeyCount:-930 ValBytes:2505284 ValCount:-930 IntentBytes:0 IntentCount:0 SysBytes:0 SysCount:0 XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}
+E190606 21:23:36.697788 175 util/log/crash_reporting.go:546  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] Reported as error 479fe4436eb54e188df228dac6b03b06
+F190606 21:23:36.697795 175 storage/replica_proposal.go:679  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] failed to update store after merging range: IO error: Failed to remove dir: C:\Users\anita\cockroach-data\auxiliary\sideloading\r0XXXX\r41: El sistema no puede encontrar la ruta especificada.
+goroutine 175 [running]:
+github.com/cockroachdb/cockroach/pkg/util/log.getStacks(0xc00048c100, 0xc00048c180, 0x54d7900, 0x1b)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/clog.go:1020 +0xdb
+github.com/cockroachdb/cockroach/pkg/util/log.(*loggingT).outputLogEntry(0x5740ec0, 0xc000000004, 0x54d790b, 0x1b, 0x2a7, 0xc006b86100, 0xf2)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/clog.go:876 +0x961
+github.com/cockroachdb/cockroach/pkg/util/log.addStructured(0x3c33680, 0xc00553fb60, 0x4, 0x2, 0x352c9e8, 0x2e, 0xc006b823c8, 0x1, 0x1)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/structured.go:85 +0x2df
+github.com/cockroachdb/cockroach/pkg/util/log.logDepth(0x3c33680, 0xc00553fb60, 0x1, 0x4, 0x352c9e8, 0x2e, 0xc006b823c8, 0x1, 0x1)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/log.go:71 +0x93
+github.com/cockroachdb/cockroach/pkg/util/log.Fatalf(0x3c33680, 0xc00553fb60, 0x352c9e8, 0x2e, 0xc006b823c8, 0x1, 0x1)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/log/log.go:182 +0x85
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).handleReplicatedEvalResult(0xc0007baa00, 0x3c33680, 0xc00553fb60, 0x0, 0x0, 0x0, 0xc000972180, 0x0, 0x0, 0x0, ...)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_proposal.go:679 +0x10ec
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).handleEvalResultRaftMuLocked(0xc0007baa00, 0x3c33680, 0xc00553fb60, 0xc006b3ec60, 0x1, 0x0, 0x0, 0xc000972180, 0x0, 0x0, ...)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_proposal.go:842 +0xb1
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).processRaftCommand(0xc0007baa00, 0x3c33680, 0xc00553fb60, 0xc006bc1f00, 0x8, 0x9, 0x115, 0x100000001, 0x1, 0x12, ...)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_raft.go:2006 +0x8f2
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).handleRaftReadyRaftMuLocked(0xc0007baa00, 0x3c33680, 0xc00553fcb0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_raft.go:816 +0x13e6
+github.com/cockroachdb/cockroach/pkg/storage.(*Replica).handleRaftReady(0xc0007baa00, 0x3c33680, 0xc00553fcb0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, ...)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/replica_raft.go:505 +0x13e
+github.com/cockroachdb/cockroach/pkg/storage.(*Store).processReady(0xc0009de000, 0x3c33680, 0xc00553fcb0, 0x36)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/store.go:3681 +0x12f
+github.com/cockroachdb/cockroach/pkg/storage.(*raftScheduler).worker(0xc000430d00, 0x3c33680, 0xc0007fa450)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/scheduler.go:214 +0x25f
+github.com/cockroachdb/cockroach/pkg/storage.(*raftScheduler).Start.func2(0x3c33680, 0xc0007fa450)
+	/go/src/github.com/cockroachdb/cockroach/pkg/storage/scheduler.go:165 +0x45
+github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunWorker.func1(0xc00034deb0, 0xc0001a4510, 0xc00034de60)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:200 +0xe8
+created by github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunWorker
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:193 +0xaf
+
+
+****************************************************************************
+
+This node experienced a fatal error (printed above), and as a result the
+process is terminating.
+
+Fatal errors can occur due to faulty hardware (disks, memory, clocks) or a
+problem in CockroachDB. With your help, the support team at Cockroach Labs
+will try to determine the root cause, recommend next steps, and we can
+improve CockroachDB based on your report.
+
+Please submit a crash report by following the instructions here:
+
+    https://github.com/cockroachdb/cockroach/issues/new/choose
+
+If you would rather not post publicly, please contact us directly at:
+
+    support@cockroachlabs.com
+
+The Cockroach Labs team appreciates your feedback.

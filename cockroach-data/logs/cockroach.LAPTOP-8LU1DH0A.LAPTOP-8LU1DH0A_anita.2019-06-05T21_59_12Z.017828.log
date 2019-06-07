@@ -1,0 +1,1179 @@
+I190605 21:59:12.955147 1 util/log/clog.go:1199  [config] file created at: 2019/06/05 21:59:12
+I190605 21:59:12.955147 1 util/log/clog.go:1199  [config] running on machine: LAPTOP-8LU1DH0A
+I190605 21:59:12.955147 1 util/log/clog.go:1199  [config] binary: CockroachDB CCL v19.1.1 (x86_64-w64-mingw32, built 2019/05/15 20:36:28, go1.11.6)
+I190605 21:59:12.955147 1 util/log/clog.go:1199  [config] arguments: [cockroach start --insecure]
+I190605 21:59:12.955147 1 util/log/clog.go:1199  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I190605 21:59:12.955145 1 cli/start.go:1033  logging to directory C:\Users\anita\cockroach-data\logs
+W190605 21:59:12.957195 1 cli/start.go:1068  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.1/secure-a-cluster.html
+W190605 21:59:13.004028 1 cli/start.go:944  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (3.0 GiB).
+W190605 21:59:13.004080 1 cli/start.go:957  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (3.0 GiB).
+I190605 21:59:13.004090 1 cli/start.go:1082  CockroachDB CCL v19.1.1 (x86_64-w64-mingw32, built 2019/05/15 20:36:28, go1.11.6)
+I190605 21:59:13.112191 1 server/config.go:386  system total memory: 12 GiB
+I190605 21:59:13.112235 1 server/config.go:388  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I190605 21:59:13.112249 1 cli/start.go:929  process identity: uid S-1-5-21-1277130278-1379351995-3284735411-1001, gid S-1-5-21-1277130278-1379351995-3284735411-1001
+I190605 21:59:13.112259 1 cli/start.go:554  starting cockroach node
+I190605 21:59:13.128032 14 storage/engine/rocksdb.go:613  opening rocksdb instance at "C:\\Users\\anita\\cockroach-data\\cockroach-temp028130115"
+I190605 21:59:13.972497 14 server/server.go:879  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I190605 21:59:13.973566 14 storage/engine/rocksdb.go:613  opening rocksdb instance at "C:\\Users\\anita\\cockroach-data"
+I190605 21:59:16.017189 14 server/config.go:494  [n?] 1 storage engine initialized
+I190605 21:59:16.017207 14 server/config.go:497  [n?] RocksDB cache size: 128 MiB
+I190605 21:59:16.017215 14 server/config.go:497  [n?] store 0: RocksDB, max size 0 B, max open file limit 10000
+W190605 21:59:16.095881 14 cli/start.go:896  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "LAPTOP-8LU1DH0A" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I190605 21:59:16.133855 14 gossip/gossip.go:392  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"LAPTOP-8LU1DH0A:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:1 patch:0 unstable:0 > build_tag:"v19.1.1" started_at:1559771956133549100 
+W190605 21:59:16.173194 209 storage/replica_range_lease.go:506  can't determine lease status due to node liveness error: node not in the liveness table
+W190605 21:59:16.173287 209 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190605 21:59:16.190879 14 server/node.go:461  [n1] initialized store [n1,s1]: disk (capacity=930 GiB, available=817 GiB, used=14 MiB, logicalBytes=82 MiB), ranges=26, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=2752.00 p75=18024.00 p90=19689216.00 pMax=33552844.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I190605 21:59:16.191081 14 storage/stores.go:244  [n1] read 0 node addresses from persistent storage
+W190605 21:59:16.219297 209 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190605 21:59:16.254593 14 server/node.go:699  [n1] connecting to gossip network to verify cluster ID...
+I190605 21:59:16.254631 14 server/node.go:719  [n1] node connected via gossip and verified as part of cluster "8ca7bf97-0dc5-4ba4-9c59-0796159e4e38"
+I190605 21:59:16.254902 14 server/node.go:542  [n1] node=1: started with [<no-attributes>=C:\Users\anita\cockroach-data] engine(s) and attributes []
+I190605 21:59:16.255669 14 server/server.go:1585  [n1] starting http server at [::]:8080 (use: LAPTOP-8LU1DH0A:8080)
+I190605 21:59:16.255692 14 server/server.go:1587  [n1] starting grpc/postgres server at [::]:26257
+I190605 21:59:16.255706 14 server/server.go:1588  [n1] advertising CockroachDB node at LAPTOP-8LU1DH0A:26257
+W190605 21:59:16.255806 14 jobs/registry.go:341  [n1] unable to get node liveness: node not in the liveness table
+I190605 21:59:16.486196 14 server/server.go:1653  [n1] done ensuring all necessary migrations have run
+I190605 21:59:16.486217 14 server/server.go:1656  [n1] serving sql connections
+I190605 21:59:16.486436 14 cli/start.go:689  [config] clusterID: 8ca7bf97-0dc5-4ba4-9c59-0796159e4e38
+I190605 21:59:16.486466 14 cli/start.go:697  node startup completed:
+CockroachDB node starting at 2019-06-05 21:59:16.4863613 +0000 UTC (took 3.5s)
+build:               CCL v19.1.1 @ 2019/05/15 20:36:28 (go1.11.6)
+webui:               http://LAPTOP-8LU1DH0A:8080
+sql:                 postgresql://root@LAPTOP-8LU1DH0A:26257?sslmode=disable
+client flags:        cockroach <client cmd> --host=LAPTOP-8LU1DH0A:26257 --insecure
+logs:                C:\Users\anita\cockroach-data\logs
+temp dir:            C:\Users\anita\cockroach-data\cockroach-temp028130115
+external I/O path:   C:\Users\anita\cockroach-data\extern
+store[0]:            path=C:\Users\anita\cockroach-data
+status:              restarted pre-existing node
+clusterID:           8ca7bf97-0dc5-4ba4-9c59-0796159e4e38
+nodeID:              1
+I190605 21:59:16.691908 135 server/server_update.go:67  [n1] no need to upgrade, cluster already at the newest version
+I190605 21:59:16.848140 266 sql/lease.go:1857  released orphaned table lease: {id:54 version:5 expiration:{Time:{wall:548086000 ext:63695362133 loc:<nil>}}}
+I190605 21:59:16.848179 269 sql/lease.go:1857  released orphaned table lease: {id:59 version:2 expiration:{Time:{wall:784672000 ext:63695362132 loc:<nil>}}}
+I190605 21:59:16.914094 268 sql/lease.go:1857  released orphaned table lease: {id:58 version:2 expiration:{Time:{wall:347847000 ext:63695362132 loc:<nil>}}}
+I190605 21:59:16.914354 138 sql/event_log.go:135  [n1] Event: "node_restart", target: 1, info: {Descriptor:{NodeID:1 Address:LAPTOP-8LU1DH0A:26257 Attrs: Locality: ServerVersion:19.1 BuildTag:v19.1.1 StartedAt:1559771956133549100 LocalityAddress:[] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0} ClusterID:8ca7bf97-0dc5-4ba4-9c59-0796159e4e38 StartedAt:1559771956133549100 LastUp:1559771930631694100}
+I190605 21:59:16.914371 267 sql/lease.go:1857  released orphaned table lease: {id:56 version:2 expiration:{Time:{wall:376849000 ext:63695362136 loc:<nil>}}}
+I190605 21:59:18.011496 119 gossip/gossip.go:1510  [n1] node has connected to cluster via gossip
+I190605 21:59:18.011655 119 storage/stores.go:263  [n1] wrote 0 node addresses to persistent storage
+W190605 21:59:19.713337 196 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.5s [processed=1]
+W190605 21:59:21.306968 198 storage/engine/rocksdb.go:2040  batch [3/150/0] commit took 933.4047ms (>= warning threshold 500ms)
+W190605 21:59:21.346238 198 storage/store.go:3692  [n1,s1,r9/1:/Table/1{3-4}] handle raft ready: 1.0s [processed=2]
+W190605 21:59:21.346344 197 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 21:59:21.346448 258 storage/node_liveness.go:523  [n1,s1,r9/1:/Table/1{3-4}] slow heartbeat took 1.2s
+W190605 21:59:23.324675 164 storage/engine/rocksdb.go:2040  batch [3/150/0] commit took 951.5909ms (>= warning threshold 500ms)
+W190605 21:59:23.379795 148 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 21:59:23.450339 308 storage/node_liveness.go:523  [n1,s1,r21/1:/Table/5{4-6}] slow heartbeat took 1.3s
+W190605 21:59:23.478245 164 storage/store.go:3692  [n1,s1,r21/1:/Table/5{4-6}] handle raft ready: 1.1s [processed=2]
+W190605 21:59:23.478358 125 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 21:59:25.402880 159 storage/engine/rocksdb.go:2040  batch [3/150/0] commit took 1.0285389s (>= warning threshold 500ms)
+W190605 21:59:25.451738 159 storage/store.go:3692  [n1,s1,r15/1:/Table/{19-20}] handle raft ready: 1.1s [processed=2]
+W190605 21:59:25.451887 160 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 21:59:25.452016 309 storage/node_liveness.go:523  [n1,s1,r15/1:/Table/{19-20}] slow heartbeat took 1.3s
+W190605 21:59:26.258250 222 server/status/runtime.go:423  [n1] unable to get file descriptor usage (will not try again): not implemented on windows
+I190605 21:59:26.260858 217 storage/store.go:4204  [n1,s1] sstables (read amplification = 1):
+6 [ 9M 3 ]: 4M[2] 1M
+I190605 21:59:26.261079 217 storage/store.go:4205  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.0         2         1    1.887       0      0
+  L6      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0     -0.0       0.0  84.0      5.4      5.4         2         1    1.761     31K    470
+ Sum      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0      0.0       0.0 409.5      2.6      2.6         4         2    1.824     31K    470
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0 409.5      2.6      2.6         4         2    1.824     31K    470
+Uptime(secs): 12.3 total, 12.3 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.01 GB write, 0.77 MB/s write, 0.01 GB read, 0.78 MB/s read, 3.6 seconds
+Interval compaction: 0.01 GB write, 0.77 MB/s write, 0.01 GB read, 0.78 MB/s read, 3.6 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I190605 21:59:26.556974 222 server/status/runtime.go:500  [n1] runtime stats: 77 MiB RSS, 164 goroutines, 85 MiB/712 KiB/99 MiB GO alloc/idle/total, 19 MiB/23 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (8x), 4.3 KiB/2.8 KiB (r/w)net
+W190605 21:59:26.705559 171 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+W190605 21:59:27.903022 161 storage/engine/rocksdb.go:2040  batch [3/150/0] commit took 520.7857ms (>= warning threshold 500ms)
+W190605 21:59:27.952730 179 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 21:59:27.991426 174 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 21:59:28.018786 161 storage/store.go:3692  [n1,s1,r13/1:/Table/1{7-8}] handle raft ready: 0.6s [processed=2]
+W190605 21:59:30.943524 186 storage/engine/rocksdb.go:2040  batch [3/150/0] commit took 559.3398ms (>= warning threshold 500ms)
+W190605 21:59:31.014648 186 storage/store.go:3692  [n1,s1,r14/1:/Table/1{8-9}] handle raft ready: 0.6s [processed=2]
+W190605 21:59:31.014803 169 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 21:59:31.015005 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+I190605 21:59:31.174245 216 storage/compactor/compactor.go:329  [n1,s1,compactor] purging suggested compaction for range /System/tsd/cr.store.addsstable.applications/1/10s/2019-06-03T20:00:00Z - /System/tsd/cr.store.queue.replicate.pending/1/10s/2019-06-03T12:00:00Z that contains live data
+W190605 21:59:34.698811 194 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+W190605 21:59:34.736768 196 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=1]
+I190605 21:59:36.864434 222 server/status/runtime.go:500  [n1] runtime stats: 81 MiB RSS, 164 goroutines, 81 MiB/8.3 MiB/103 MiB GO alloc/idle/total, 20 MiB/25 MiB CGO alloc/total, 315.9 CGO/sec, 0.8/0.9 %(u/s)time, 0.0 %gc (1x), 960 B/529 B (r/w)net
+W190605 21:59:38.053241 153 storage/engine/rocksdb.go:2040  batch [3/150/0] commit took 680.0475ms (>= warning threshold 500ms)
+W190605 21:59:38.098884 153 storage/store.go:3692  [n1,s1,r18/1:/Table/2{2-3}] handle raft ready: 0.7s [processed=2]
+W190605 21:59:38.099028 154 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+I190605 21:59:38.377179 404 storage/replica_consistency.go:198  [n1,consistencyChecker,s1,r54/1:/System/tsd/cr.{node.…-store…}] triggering stats recomputation to resolve delta of {ContainsEstimates:true LastUpdateNanos:1559771976675350000 IntentAge:0 GCBytesAge:0 LiveBytes:4969746 LiveCount:-512 KeyBytes:-23894 KeyCount:-512 ValBytes:4993640 ValCount:-512 IntentBytes:0 IntentCount:0 SysBytes:0 SysCount:0 XXX_NoUnkeyedLiteral:{} XXX_sizecache:0}
+W190605 21:59:42.557400 182 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 21:59:44.591786 185 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 21:59:44.591959 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 21:59:46.531445 192 storage/engine/rocksdb.go:2040  batch [2/324/0] commit took 1.1072823s (>= warning threshold 500ms)
+W190605 21:59:46.559084 190 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.3s [processed=1]
+W190605 21:59:46.598105 192 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+I190605 21:59:47.163932 222 server/status/runtime.go:500  [n1] runtime stats: 125 MiB RSS, 175 goroutines, 104 MiB/1000 KiB/120 MiB GO alloc/idle/total, 38 MiB/46 MiB CGO alloc/total, 1101.8 CGO/sec, 1.5/1.2 %(u/s)time, 0.0 %gc (0x), 14 KiB/7.4 KiB (r/w)net
+W190605 21:59:49.138686 203 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 21:59:49.214889 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+I190605 21:59:57.494562 222 server/status/runtime.go:500  [n1] runtime stats: 133 MiB RSS, 175 goroutines, 111 MiB/2.4 MiB/128 MiB GO alloc/idle/total, 38 MiB/47 MiB CGO alloc/total, 188.1 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 596 B/220 B (r/w)net
+W190605 22:00:00.628248 162 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.4s [processed=1]
+W190605 22:00:06.377964 163 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 621.9558ms (>= warning threshold 500ms)
+W190605 22:00:06.427421 166 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:00:06.477086 163 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:00:07.804286 222 server/status/runtime.go:500  [n1] runtime stats: 136 MiB RSS, 175 goroutines, 118 MiB/3.6 MiB/136 MiB GO alloc/idle/total, 39 MiB/48 MiB CGO alloc/total, 179.6 CGO/sec, 0.5/1.2 %(u/s)time, 0.0 %gc (1x), 1.3 KiB/1.0 KiB (r/w)net
+W190605 22:00:11.881548 186 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:00:11.974525 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.7s
+I190605 22:00:16.256254 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+W190605 22:00:16.494423 190 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.7s [processed=1]
+W190605 22:00:16.494604 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.7s
+I190605 22:00:18.101510 222 server/status/runtime.go:500  [n1] runtime stats: 138 MiB RSS, 174 goroutines, 82 MiB/38 MiB/136 MiB GO alloc/idle/total, 39 MiB/49 MiB CGO alloc/total, 240.8 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (0x), 519 B/314 B (r/w)net
+W190605 22:00:20.701363 123 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:00:20.701536 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.4s
+W190605 22:00:23.438962 124 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.2s [processed=1]
+W190605 22:00:27.853691 154 storage/engine/rocksdb.go:2040  batch [2/23688/0] commit took 1.2869231s (>= warning threshold 500ms)
+W190605 22:00:28.018459 154 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.5s [processed=1]
+W190605 22:00:28.019483 155 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.3s [processed=1]
+W190605 22:00:28.021850 164 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.3s [processed=1]
+W190605 22:00:28.021928 159 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+I190605 22:00:28.398890 222 server/status/runtime.go:500  [n1] runtime stats: 139 MiB RSS, 174 goroutines, 90 MiB/32 MiB/136 MiB GO alloc/idle/total, 40 MiB/49 MiB CGO alloc/total, 164.2 CGO/sec, 0.6/1.2 %(u/s)time, 0.0 %gc (0x), 997 B/199 B (r/w)net
+W190605 22:00:31.432413 167 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:00:33.944222 165 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 22:00:33.944405 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.2s
+I190605 22:00:38.710393 222 server/status/runtime.go:500  [n1] runtime stats: 142 MiB RSS, 174 goroutines, 98 MiB/24 MiB/136 MiB GO alloc/idle/total, 40 MiB/49 MiB CGO alloc/total, 204.1 CGO/sec, 0.8/0.3 %(u/s)time, 0.0 %gc (0x), 1.2 KiB/524 B (r/w)net
+W190605 22:00:45.088228 194 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+W190605 22:00:46.787192 193 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 529.2916ms (>= warning threshold 500ms)
+W190605 22:00:46.853462 193 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:00:49.008095 222 server/status/runtime.go:500  [n1] runtime stats: 143 MiB RSS, 175 goroutines, 104 MiB/18 MiB/136 MiB GO alloc/idle/total, 40 MiB/50 MiB CGO alloc/total, 180.0 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 925 B/1.2 KiB (r/w)net
+W190605 22:00:55.092783 129 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+I190605 22:00:59.311715 222 server/status/runtime.go:500  [n1] runtime stats: 144 MiB RSS, 175 goroutines, 111 MiB/12 MiB/136 MiB GO alloc/idle/total, 40 MiB/50 MiB CGO alloc/total, 173.2 CGO/sec, 0.5/0.6 %(u/s)time, 0.0 %gc (0x), 528 B/288 B (r/w)net
+W190605 22:01:04.943784 168 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:01:07.433343 178 storage/engine/rocksdb.go:2040  batch [2/23687/0] commit took 857.8976ms (>= warning threshold 500ms)
+W190605 22:01:07.472842 177 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:01:07.510370 178 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.9s [processed=1]
+W190605 22:01:07.511072 163 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.8s [processed=1]
+W190605 22:01:07.513409 179 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.8s [processed=1]
+W190605 22:01:07.513568 174 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+I190605 22:01:09.622798 222 server/status/runtime.go:500  [n1] runtime stats: 144 MiB RSS, 175 goroutines, 117 MiB/5.5 MiB/136 MiB GO alloc/idle/total, 40 MiB/50 MiB CGO alloc/total, 186.7 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (0x), 1.7 KiB/653 B (r/w)net
+W190605 22:01:10.248987 186 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.5s [processed=1]
+W190605 22:01:10.249215 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+W190605 22:01:11.930693 169 storage/engine/rocksdb.go:2040  batch [2/177/0] commit took 617.0251ms (>= warning threshold 500ms)
+W190605 22:01:11.930988 187 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:01:11.959123 169 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:01:16.264961 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:01:19.924870 222 server/status/runtime.go:500  [n1] runtime stats: 151 MiB RSS, 174 goroutines, 123 MiB/2.9 MiB/140 MiB GO alloc/idle/total, 40 MiB/51 MiB CGO alloc/total, 215.5 CGO/sec, 2.1/1.2 %(u/s)time, 0.0 %gc (0x), 140 B/146 B (r/w)net
+W190605 22:01:21.678919 152 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.4s [processed=1]
+W190605 22:01:23.448314 150 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 1.1915154s (>= warning threshold 500ms)
+W190605 22:01:23.545336 127 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.4s [processed=1]
+W190605 22:01:23.545370 150 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:01:23.579785 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:01:27.953649 160 storage/engine/rocksdb.go:2040  batch [2/15216/0] commit took 1.2786652s (>= warning threshold 500ms)
+W190605 22:01:28.044115 155 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.5s [processed=1]
+W190605 22:01:28.044367 160 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.4s [processed=1]
+W190605 22:01:28.046644 170 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.4s [processed=1]
+W190605 22:01:28.046735 164 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.4s [processed=1]
+W190605 22:01:28.046874 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:01:28.047012 153 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=2]
+W190605 22:01:29.825032 165 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+I190605 22:01:30.222270 222 server/status/runtime.go:500  [n1] runtime stats: 158 MiB RSS, 174 goroutines, 129 MiB/928 KiB/144 MiB GO alloc/idle/total, 40 MiB/51 MiB CGO alloc/total, 184.0 CGO/sec, 0.3/1.2 %(u/s)time, 0.0 %gc (1x), 6.5 KiB/3.0 KiB (r/w)net
+W190605 22:01:36.267405 176 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 509.5777ms (>= warning threshold 500ms)
+W190605 22:01:36.297115 168 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 22:01:36.324405 176 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:01:39.518686 187 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.2s [processed=1]
+I190605 22:01:40.525263 222 server/status/runtime.go:500  [n1] runtime stats: 159 MiB RSS, 174 goroutines, 78 MiB/57 MiB/153 MiB GO alloc/idle/total, 41 MiB/52 MiB CGO alloc/total, 171.0 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 856 B/363 B (r/w)net
+W190605 22:01:43.768331 189 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.3s [processed=1]
+W190605 22:01:45.561041 194 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+I190605 22:01:50.834743 222 server/status/runtime.go:500  [n1] runtime stats: 159 MiB RSS, 175 goroutines, 86 MiB/50 MiB/153 MiB GO alloc/idle/total, 41 MiB/52 MiB CGO alloc/total, 196.2 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (0x), 9.8 KiB/969 B (r/w)net
+W190605 22:01:54.321480 154 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 564.3695ms (>= warning threshold 500ms)
+W190605 22:01:54.380828 127 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:01:54.380906 154 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:02:01.125676 222 server/status/runtime.go:500  [n1] runtime stats: 160 MiB RSS, 175 goroutines, 92 MiB/44 MiB/153 MiB GO alloc/idle/total, 41 MiB/52 MiB CGO alloc/total, 188.8 CGO/sec, 1.4/1.4 %(u/s)time, 0.0 %gc (0x), 9.4 KiB/543 B (r/w)net
+I190605 22:02:11.418292 222 server/status/runtime.go:500  [n1] runtime stats: 160 MiB RSS, 175 goroutines, 99 MiB/38 MiB/153 MiB GO alloc/idle/total, 41 MiB/52 MiB CGO alloc/total, 174.5 CGO/sec, 1.1/0.5 %(u/s)time, 0.0 %gc (0x), 467 B/254 B (r/w)net
+I190605 22:02:16.254715 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:02:18.481950 200 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 2.3087855s (>= warning threshold 500ms)
+W190605 22:02:18.821814 200 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 2.6s [processed=1]
+W190605 22:02:18.822111 198 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 2.1s [processed=1]
+W190605 22:02:18.823523 197 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 2.3s [processed=1]
+W190605 22:02:18.823571 203 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 2.1s [processed=1]
+W190605 22:02:18.823635 195 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 2.1s [processed=1]
+W190605 22:02:19.339174 123 storage/engine/rocksdb.go:2040  batch [2/177/0] commit took 515.287ms (>= warning threshold 500ms)
+W190605 22:02:19.398638 193 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:02:19.398777 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 3.1s
+W190605 22:02:19.398901 123 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:02:21.723256 222 server/status/runtime.go:500  [n1] runtime stats: 161 MiB RSS, 174 goroutines, 106 MiB/32 MiB/153 MiB GO alloc/idle/total, 42 MiB/53 MiB CGO alloc/total, 216.6 CGO/sec, 1.2/0.8 %(u/s)time, 0.0 %gc (0x), 464 B/110 B (r/w)net
+I190605 22:02:32.014407 222 server/status/runtime.go:500  [n1] runtime stats: 161 MiB RSS, 174 goroutines, 112 MiB/26 MiB/153 MiB GO alloc/idle/total, 42 MiB/53 MiB CGO alloc/total, 163.5 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (0x), 180 B/152 B (r/w)net
+W190605 22:02:37.586242 174 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+I190605 22:02:42.343368 222 server/status/runtime.go:500  [n1] runtime stats: 161 MiB RSS, 174 goroutines, 118 MiB/20 MiB/153 MiB GO alloc/idle/total, 42 MiB/53 MiB CGO alloc/total, 175.9 CGO/sec, 0.2/0.8 %(u/s)time, 0.0 %gc (0x), 3.7 KiB/815 B (r/w)net
+W190605 22:02:48.181824 125 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+I190605 22:02:52.634809 222 server/status/runtime.go:500  [n1] runtime stats: 164 MiB RSS, 175 goroutines, 125 MiB/13 MiB/153 MiB GO alloc/idle/total, 42 MiB/54 MiB CGO alloc/total, 203.3 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (0x), 14 KiB/3.3 KiB (r/w)net
+I190605 22:03:02.965680 222 server/status/runtime.go:500  [n1] runtime stats: 165 MiB RSS, 175 goroutines, 131 MiB/7.0 MiB/153 MiB GO alloc/idle/total, 42 MiB/54 MiB CGO alloc/total, 171.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 12 KiB/3.3 KiB (r/w)net
+W190605 22:03:07.560694 175 storage/engine/rocksdb.go:2040  batch [2/38463/0] commit took 517.7426ms (>= warning threshold 500ms)
+W190605 22:03:07.634219 181 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.0s [processed=1]
+W190605 22:03:07.637990 161 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.0s [processed=1]
+W190605 22:03:07.638089 175 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+I190605 22:03:13.306119 222 server/status/runtime.go:500  [n1] runtime stats: 170 MiB RSS, 175 goroutines, 138 MiB/4.0 MiB/157 MiB GO alloc/idle/total, 42 MiB/54 MiB CGO alloc/total, 174.1 CGO/sec, 0.9/0.8 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I190605 22:03:16.260594 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:03:23.386324 152 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.9s [processed=1]
+I190605 22:03:23.636179 222 server/status/runtime.go:500  [n1] runtime stats: 172 MiB RSS, 175 goroutines, 144 MiB/3.0 MiB/161 MiB GO alloc/idle/total, 42 MiB/54 MiB CGO alloc/total, 214.8 CGO/sec, 0.5/1.1 %(u/s)time, 0.0 %gc (1x), 180 B/152 B (r/w)net
+W190605 22:03:27.646434 167 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 968.6907ms (>= warning threshold 500ms)
+W190605 22:03:27.739985 151 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.2s [processed=1]
+W190605 22:03:27.740730 167 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.1s [processed=1]
+W190605 22:03:27.789543 162 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.1s [processed=1]
+W190605 22:03:27.790604 159 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.1s [processed=1]
+I190605 22:03:33.948629 222 server/status/runtime.go:500  [n1] runtime stats: 172 MiB RSS, 174 goroutines, 84 MiB/60 MiB/161 MiB GO alloc/idle/total, 42 MiB/54 MiB CGO alloc/total, 183.7 CGO/sec, 1.2/0.9 %(u/s)time, 0.0 %gc (0x), 430 B/201 B (r/w)net
+W190605 22:03:39.985937 187 storage/engine/rocksdb.go:2040  batch [2/324/0] commit took 561.8853ms (>= warning threshold 500ms)
+W190605 22:03:40.118683 187 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:03:40.118863 182 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.6s [processed=1]
+W190605 22:03:42.977279 188 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 22:03:42.977370 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.2s
+I190605 22:03:44.243917 222 server/status/runtime.go:500  [n1] runtime stats: 173 MiB RSS, 174 goroutines, 91 MiB/54 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 168.3 CGO/sec, 0.8/1.1 %(u/s)time, 0.0 %gc (0x), 22 KiB/10 KiB (r/w)net
+I190605 22:03:54.552126 222 server/status/runtime.go:500  [n1] runtime stats: 173 MiB RSS, 175 goroutines, 98 MiB/47 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 193.4 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (0x), 7.8 KiB/10 KiB (r/w)net
+W190605 22:03:56.650506 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 608.5634ms (>= warning threshold 500ms)
+W190605 22:03:56.650903 129 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:03:56.760458 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+I190605 22:04:04.853459 222 server/status/runtime.go:500  [n1] runtime stats: 173 MiB RSS, 178 goroutines, 104 MiB/41 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 179.7 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 1.5 KiB/2.3 KiB (r/w)net
+W190605 22:04:05.144209 157 storage/engine/rocksdb.go:2040  batch [2/324/0] commit took 971.1051ms (>= warning threshold 500ms)
+W190605 22:04:05.193956 153 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.7s [processed=1]
+W190605 22:04:05.248495 157 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:04:05.248665 171 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:04:05.276529 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+W190605 22:04:07.634613 180 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 944.5812ms (>= warning threshold 500ms)
+W190605 22:04:07.673286 177 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.1s [processed=1]
+W190605 22:04:07.712372 180 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.0s [processed=1]
+W190605 22:04:07.715081 184 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.0s [processed=1]
+W190605 22:04:07.715213 181 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+W190605 22:04:09.207241 179 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+W190605 22:04:12.077172 182 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:04:15.155864 222 server/status/runtime.go:500  [n1] runtime stats: 174 MiB RSS, 175 goroutines, 111 MiB/35 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 180.4 CGO/sec, 1.4/1.7 %(u/s)time, 0.0 %gc (0x), 6.2 KiB/11 KiB (r/w)net
+I190605 22:04:16.255271 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:04:16.806024 190 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:04:23.115099 201 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 858.2184ms (>= warning threshold 500ms)
+W190605 22:04:23.172869 124 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:04:23.203735 201 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+W190605 22:04:23.204162 193 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.7s [processed=1]
+I190605 22:04:25.454212 222 server/status/runtime.go:500  [n1] runtime stats: 175 MiB RSS, 174 goroutines, 117 MiB/28 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 215.3 CGO/sec, 0.9/0.3 %(u/s)time, 0.0 %gc (0x), 30 KiB/18 KiB (r/w)net
+W190605 22:04:27.855843 154 storage/engine/rocksdb.go:2040  batch [2/23687/0] commit took 1.2890569s (>= warning threshold 500ms)
+W190605 22:04:27.964321 154 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.4s [processed=1]
+W190605 22:04:27.965431 126 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.3s [processed=1]
+W190605 22:04:27.968014 152 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.3s [processed=1]
+W190605 22:04:27.968175 150 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+W190605 22:04:27.968219 151 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=2]
+W190605 22:04:28.010394 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.2s
+W190605 22:04:29.591937 159 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:04:32.317972 155 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:04:32.318167 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+W190605 22:04:34.890218 173 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.5s [processed=1]
+I190605 22:04:35.755601 222 server/status/runtime.go:500  [n1] runtime stats: 175 MiB RSS, 174 goroutines, 123 MiB/22 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 167.6 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (0x), 7.7 KiB/3.4 KiB (r/w)net
+I190605 22:04:46.051168 222 server/status/runtime.go:500  [n1] runtime stats: 176 MiB RSS, 174 goroutines, 129 MiB/16 MiB/161 MiB GO alloc/idle/total, 43 MiB/54 MiB CGO alloc/total, 195.3 CGO/sec, 1.7/1.1 %(u/s)time, 0.0 %gc (0x), 266 B/740 B (r/w)net
+W190605 22:04:48.001644 202 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 1.3256789s (>= warning threshold 500ms)
+W190605 22:04:48.116908 190 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.5s [processed=1]
+W190605 22:04:48.200863 202 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.5s [processed=1]
+W190605 22:04:48.203760 199 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.3s [processed=1]
+W190605 22:04:48.203784 192 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.5s [processed=1]
+W190605 22:04:48.203883 200 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.5s [processed=1]
+I190605 22:04:56.351075 222 server/status/runtime.go:500  [n1] runtime stats: 176 MiB RSS, 175 goroutines, 142 MiB/4.0 MiB/161 MiB GO alloc/idle/total, 43 MiB/55 MiB CGO alloc/total, 183.3 CGO/sec, 1.7/0.9 %(u/s)time, 0.0 %gc (0x), 6.1 KiB/6.8 KiB (r/w)net
+W190605 22:04:57.338538 127 storage/engine/rocksdb.go:2040  batch [6/77270/0] commit took 505.2769ms (>= warning threshold 500ms)
+W190605 22:04:57.338850 129 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.8s [processed=1]
+W190605 22:04:57.426602 154 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.8s [processed=1]
+W190605 22:04:57.429239 126 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.8s [processed=1]
+W190605 22:04:57.429329 127 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+W190605 22:05:03.466091 170 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:05:06.672280 222 server/status/runtime.go:500  [n1] runtime stats: 178 MiB RSS, 175 goroutines, 79 MiB/68 MiB/165 MiB GO alloc/idle/total, 43 MiB/55 MiB CGO alloc/total, 202.9 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (1x), 549 KiB/20 KiB (r/w)net
+W190605 22:05:07.859884 180 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:05:16.260182 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:05:16.969276 222 server/status/runtime.go:500  [n1] runtime stats: 178 MiB RSS, 175 goroutines, 86 MiB/62 MiB/165 MiB GO alloc/idle/total, 43 MiB/55 MiB CGO alloc/total, 243.5 CGO/sec, 1.7/1.5 %(u/s)time, 0.0 %gc (0x), 4.2 MiB/119 KiB (r/w)net
+W190605 22:05:21.443334 194 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:05:21.443398 197 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:05:21.443787 198 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.8s [processed=1]
+W190605 22:05:21.953664 197 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=1]
+I190605 22:05:27.272810 222 server/status/runtime.go:500  [n1] runtime stats: 179 MiB RSS, 177 goroutines, 92 MiB/56 MiB/165 MiB GO alloc/idle/total, 43 MiB/55 MiB CGO alloc/total, 182.8 CGO/sec, 0.8/0.3 %(u/s)time, 0.0 %gc (0x), 6.0 KiB/7.1 KiB (r/w)net
+W190605 22:05:27.829859 201 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 1.1501972s (>= warning threshold 500ms)
+W190605 22:05:27.879175 148 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.3s [processed=1]
+W190605 22:05:27.929426 201 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.2s [processed=1]
+W190605 22:05:27.930930 154 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+W190605 22:05:27.930986 129 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.3s [processed=1]
+W190605 22:05:27.931026 167 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+I190605 22:05:37.583284 222 server/status/runtime.go:500  [n1] runtime stats: 179 MiB RSS, 174 goroutines, 99 MiB/50 MiB/165 MiB GO alloc/idle/total, 43 MiB/55 MiB CGO alloc/total, 190.4 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 1.5 KiB/2.1 KiB (r/w)net
+W190605 22:05:44.800838 187 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.5s [processed=1]
+W190605 22:05:44.801022 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+W190605 22:05:47.186780 169 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 510.6955ms (>= warning threshold 500ms)
+W190605 22:05:47.223878 188 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:05:47.263953 169 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:05:47.265451 182 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:05:47.265508 185 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:05:47.879898 222 server/status/runtime.go:500  [n1] runtime stats: 179 MiB RSS, 175 goroutines, 105 MiB/44 MiB/165 MiB GO alloc/idle/total, 51 MiB/63 MiB CGO alloc/total, 176.6 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 7.8 KiB/6.8 KiB (r/w)net
+I190605 22:05:58.186932 222 server/status/runtime.go:500  [n1] runtime stats: 180 MiB RSS, 175 goroutines, 112 MiB/38 MiB/165 MiB GO alloc/idle/total, 51 MiB/63 MiB CGO alloc/total, 202.7 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (0x), 1.5 MiB/73 KiB (r/w)net
+W190605 22:06:02.180667 164 storage/engine/rocksdb.go:2040  batch [2/191/2] commit took 546.4454ms (>= warning threshold 500ms)
+W190605 22:06:02.180835 164 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:06:02.180841 159 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+W190605 22:06:02.303522 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+I190605 22:06:08.483533 222 server/status/runtime.go:500  [n1] runtime stats: 180 MiB RSS, 176 goroutines, 118 MiB/32 MiB/165 MiB GO alloc/idle/total, 51 MiB/63 MiB CGO alloc/total, 170.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 2.1 KiB/339 B (r/w)net
+W190605 22:06:08.866630 163 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+W190605 22:06:11.329808 175 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:06:11.329995 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+I190605 22:06:16.260185 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:06:18.790403 222 server/status/runtime.go:500  [n1] runtime stats: 180 MiB RSS, 174 goroutines, 124 MiB/26 MiB/165 MiB GO alloc/idle/total, 51 MiB/63 MiB CGO alloc/total, 198.8 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (0x), 3.0 KiB/152 B (r/w)net
+W190605 22:06:27.221097 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 1.1673217s (>= warning threshold 500ms)
+W190605 22:06:27.349137 197 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.4s [processed=1]
+W190605 22:06:27.497219 125 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.9s [processed=1]
+W190605 22:06:27.499864 154 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.8s [processed=1]
+W190605 22:06:27.500024 123 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.8s [processed=1]
+W190605 22:06:27.500117 156 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+I190605 22:06:29.083376 222 server/status/runtime.go:500  [n1] runtime stats: 180 MiB RSS, 174 goroutines, 130 MiB/20 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 188.7 CGO/sec, 0.9/0.8 %(u/s)time, 0.0 %gc (0x), 1.1 KiB/2.7 KiB (r/w)net
+W190605 22:06:33.565158 162 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 808.2159ms (>= warning threshold 500ms)
+W190605 22:06:34.369389 150 storage/engine/rocksdb.go:2040  batch [2/191/2] commit took 804.1543ms (>= warning threshold 500ms)
+W190605 22:06:34.369663 150 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.7s [processed=1]
+W190605 22:06:34.369908 162 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:06:34.473974 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.7s
+W190605 22:06:37.893410 168 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:06:39.388227 222 server/status/runtime.go:500  [n1] runtime stats: 181 MiB RSS, 174 goroutines, 136 MiB/14 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 178.2 CGO/sec, 1.5/1.4 %(u/s)time, 0.0 %gc (0x), 30 KiB/17 KiB (r/w)net
+W190605 22:06:44.467711 181 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+I190605 22:06:49.688070 222 server/status/runtime.go:500  [n1] runtime stats: 181 MiB RSS, 175 goroutines, 142 MiB/7.9 MiB/165 MiB GO alloc/idle/total, 51 MiB/63 MiB CGO alloc/total, 176.1 CGO/sec, 1.7/0.4 %(u/s)time, 0.0 %gc (0x), 388 B/1.4 KiB (r/w)net
+I190605 22:06:59.985738 222 server/status/runtime.go:500  [n1] runtime stats: 183 MiB RSS, 175 goroutines, 76 MiB/70 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 185.2 CGO/sec, 0.5/0.5 %(u/s)time, 0.0 %gc (1x), 3.3 KiB/5.5 KiB (r/w)net
+W190605 22:07:08.244681 157 storage/engine/rocksdb.go:2040  batch [2/38463/0] commit took 1.533838s (>= warning threshold 500ms)
+W190605 22:07:08.285220 170 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.6s [processed=1]
+W190605 22:07:08.285365 153 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.6s [processed=1]
+W190605 22:07:08.287012 157 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.6s [processed=1]
+I190605 22:07:10.294424 222 server/status/runtime.go:500  [n1] runtime stats: 183 MiB RSS, 175 goroutines, 84 MiB/64 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 186.8 CGO/sec, 1.7/1.1 %(u/s)time, 0.0 %gc (0x), 709 B/199 B (r/w)net
+W190605 22:07:13.753134 163 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:07:16.254846 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:07:17.481446 149 storage/engine/rocksdb.go:2040  batch [145/16663/2] commit took 731.9622ms (>= warning threshold 500ms)
+W190605 22:07:17.481602 149 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.8s [processed=1]
+W190605 22:07:17.483562 186 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+W190605 22:07:20.482620 195 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:07:20.604543 222 server/status/runtime.go:500  [n1] runtime stats: 183 MiB RSS, 175 goroutines, 91 MiB/58 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 196.4 CGO/sec, 0.1/0.5 %(u/s)time, 0.0 %gc (0x), 7.7 KiB/7.5 KiB (r/w)net
+W190605 22:07:22.868864 200 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:07:25.985484 189 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.6s [processed=1]
+I190605 22:07:30.909041 222 server/status/runtime.go:500  [n1] runtime stats: 184 MiB RSS, 174 goroutines, 97 MiB/52 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 167.9 CGO/sec, 0.3/0.6 %(u/s)time, 0.0 %gc (0x), 10 KiB/5.1 KiB (r/w)net
+W190605 22:07:32.153145 151 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 897.2638ms (>= warning threshold 500ms)
+W190605 22:07:32.181227 201 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:07:32.181290 151 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+W190605 22:07:36.991199 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 931.2151ms (>= warning threshold 500ms)
+W190605 22:07:37.030424 158 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:07:37.068033 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:07:37.096059 150 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.5s [processed=1]
+W190605 22:07:40.460404 172 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 2.5s [processed=1]
+I190605 22:07:41.228149 222 server/status/runtime.go:500  [n1] runtime stats: 184 MiB RSS, 174 goroutines, 103 MiB/46 MiB/165 MiB GO alloc/idle/total, 51 MiB/63 MiB CGO alloc/total, 196.8 CGO/sec, 0.8/0.0 %(u/s)time, 0.0 %gc (0x), 4.0 KiB/5.7 KiB (r/w)net
+W190605 22:07:43.088226 184 storage/engine/rocksdb.go:2040  batch [2/324/0] commit took 663.1903ms (>= warning threshold 500ms)
+W190605 22:07:43.138352 184 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:07:43.138438 168 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.4s [processed=1]
+W190605 22:07:46.035059 181 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:07:46.101974 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:07:48.273127 149 storage/engine/rocksdb.go:2040  batch [2/38463/0] commit took 1.567264s (>= warning threshold 500ms)
+W190605 22:07:48.301047 183 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.6s [processed=1]
+W190605 22:07:48.303943 169 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.6s [processed=1]
+W190605 22:07:48.304021 149 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.6s [processed=1]
+I190605 22:07:51.528801 222 server/status/runtime.go:500  [n1] runtime stats: 184 MiB RSS, 175 goroutines, 110 MiB/39 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 182.5 CGO/sec, 0.8/0.8 %(u/s)time, 0.0 %gc (0x), 442 B/152 B (r/w)net
+W190605 22:07:58.105513 198 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 1.4297768s (>= warning threshold 500ms)
+W190605 22:07:58.135690 147 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.6s [processed=1]
+W190605 22:07:58.164220 198 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.5s [processed=1]
+W190605 22:07:58.167112 203 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.5s [processed=1]
+W190605 22:07:58.167196 124 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.5s [processed=1]
+I190605 22:08:01.826766 222 server/status/runtime.go:500  [n1] runtime stats: 185 MiB RSS, 175 goroutines, 116 MiB/34 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 177.0 CGO/sec, 0.3/0.6 %(u/s)time, 0.0 %gc (0x), 5.8 KiB/18 KiB (r/w)net
+W190605 22:08:04.018769 128 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:08:04.067278 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:08:08.245770 165 storage/engine/rocksdb.go:2040  batch [2/38463/0] commit took 1.5224318s (>= warning threshold 500ms)
+W190605 22:08:08.297145 160 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.6s [processed=1]
+W190605 22:08:08.297340 159 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.6s [processed=1]
+W190605 22:08:08.299040 165 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.6s [processed=1]
+W190605 22:08:08.361650 155 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:08:08.361728 162 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+W190605 22:08:08.388616 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+I190605 22:08:12.124237 222 server/status/runtime.go:500  [n1] runtime stats: 185 MiB RSS, 175 goroutines, 122 MiB/27 MiB/165 MiB GO alloc/idle/total, 51 MiB/64 MiB CGO alloc/total, 179.9 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 270 B/156 B (r/w)net
+W190605 22:08:15.453810 176 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.5s [processed=1]
+I190605 22:08:16.261670 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:08:17.229210 184 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 1.0553681s (>= warning threshold 500ms)
+W190605 22:08:17.284805 175 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:17.285001 184 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:08:17.286474 168 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:08:17.286647 163 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:08:17.288507 179 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+W190605 22:08:17.350487 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+W190605 22:08:22.029006 182 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:08:22.056309 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+I190605 22:08:22.423471 222 server/status/runtime.go:500  [n1] runtime stats: 186 MiB RSS, 174 goroutines, 129 MiB/21 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 205.3 CGO/sec, 0.6/0.9 %(u/s)time, 0.0 %gc (0x), 108 B/55 B (r/w)net
+W190605 22:08:27.345157 189 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 666.9927ms (>= warning threshold 500ms)
+W190605 22:08:27.411661 189 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:27.414658 129 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:27.414745 147 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:31.034882 154 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:08:31.035076 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+I190605 22:08:32.720784 222 server/status/runtime.go:500  [n1] runtime stats: 186 MiB RSS, 175 goroutines, 135 MiB/15 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 173.2 CGO/sec, 0.6/0.9 %(u/s)time, 0.0 %gc (0x), 574 B/353 B (r/w)net
+W190605 22:08:33.106913 201 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+W190605 22:08:35.031601 151 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:08:37.708970 150 storage/engine/rocksdb.go:2040  batch [2/23692/0] commit took 1.1315112s (>= warning threshold 500ms)
+W190605 22:08:37.736154 164 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.3s [processed=1]
+W190605 22:08:37.762868 150 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.2s [processed=1]
+W190605 22:08:37.763917 160 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.1s [processed=1]
+W190605 22:08:37.766356 170 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.1s [processed=1]
+W190605 22:08:37.766361 173 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.1s [processed=1]
+W190605 22:08:39.709803 171 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+I190605 22:08:43.016709 222 server/status/runtime.go:500  [n1] runtime stats: 186 MiB RSS, 174 goroutines, 141 MiB/9.0 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 169.0 CGO/sec, 1.4/0.6 %(u/s)time, 0.0 %gc (0x), 1.1 KiB/257 B (r/w)net
+W190605 22:08:44.646908 155 storage/engine/rocksdb.go:2040  batch [2/191/2] commit took 1.3467054s (>= warning threshold 500ms)
+W190605 22:08:44.647264 155 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.5s [processed=1]
+W190605 22:08:44.647326 172 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:08:44.708258 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+W190605 22:08:47.324929 184 storage/engine/rocksdb.go:2040  batch [2/23688/0] commit took 747.7608ms (>= warning threshold 500ms)
+W190605 22:08:47.390726 184 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.8s [processed=1]
+W190605 22:08:47.391767 168 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:47.394500 174 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:47.394575 187 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.7s [processed=1]
+W190605 22:08:49.281973 149 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.5s [processed=1]
+W190605 22:08:49.282139 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+I190605 22:08:53.315900 222 server/status/runtime.go:500  [n1] runtime stats: 186 MiB RSS, 176 goroutines, 147 MiB/3.9 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 199.3 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (1x), 3.9 KiB/1.5 KiB (r/w)net
+W190605 22:08:53.443820 185 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 22:08:53.481741 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.2s
+W190605 22:08:55.911450 194 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.5s [processed=1]
+W190605 22:09:02.191896 148 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 935.4024ms (>= warning threshold 500ms)
+W190605 22:09:02.220178 201 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:09:02.220279 148 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+I190605 22:09:03.612143 222 server/status/runtime.go:500  [n1] runtime stats: 187 MiB RSS, 175 goroutines, 83 MiB/64 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 186.0 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 26 KiB/9.6 KiB (r/w)net
+W190605 22:09:06.870652 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 805.5504ms (>= warning threshold 500ms)
+W190605 22:09:06.920346 164 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 22:09:06.947777 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.2s
+W190605 22:09:09.152245 157 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+W190605 22:09:13.302539 172 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+I190605 22:09:13.907704 222 server/status/runtime.go:500  [n1] runtime stats: 187 MiB RSS, 174 goroutines, 90 MiB/58 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 176.5 CGO/sec, 0.3/0.2 %(u/s)time, 0.0 %gc (0x), 7.2 KiB/2.1 KiB (r/w)net
+I190605 22:09:16.256437 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E190605 22:09:16.796179 30 storage/queue.go:930  [n1,replicate] 26 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+W190605 22:09:17.541793 163 storage/engine/rocksdb.go:2040  batch [2/23688/0] commit took 969.6529ms (>= warning threshold 500ms)
+W190605 22:09:17.569355 184 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:09:17.608133 163 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.0s [processed=1]
+W190605 22:09:17.609202 183 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.9s [processed=1]
+W190605 22:09:17.612160 168 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.9s [processed=1]
+W190605 22:09:17.612315 174 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.9s [processed=1]
+W190605 22:09:20.152645 196 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 895.8056ms (>= warning threshold 500ms)
+W190605 22:09:20.190913 199 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:09:20.190943 196 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+I190605 22:09:24.218236 222 server/status/runtime.go:500  [n1] runtime stats: 187 MiB RSS, 175 goroutines, 97 MiB/52 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 224.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 598 B/298 B (r/w)net
+W190605 22:09:25.150076 192 storage/engine/rocksdb.go:2040  batch [2/173/0] commit took 1.3129297s (>= warning threshold 500ms)
+W190605 22:09:25.177805 191 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:09:25.178067 192 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.3s [processed=1]
+W190605 22:09:25.216034 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+I190605 22:09:26.260676 217 storage/store.go:4204  [n1,s1] sstables (read amplification = 1):
+6 [ 9M 3 ]: 4M[2] 1M
+I190605 22:09:26.260780 217 storage/store.go:4205  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.0         2         1    1.887       0      0
+  L6      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0     -0.0       0.0  84.0      5.4      5.4         2         1    1.761     31K    470
+ Sum      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0      0.0       0.0 409.5      2.6      2.6         4         2    1.824     31K    470
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 612.3 total, 600.0 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.01 GB write, 0.02 MB/s write, 0.01 GB read, 0.02 MB/s read, 3.6 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+W190605 22:09:27.189889 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 1.1228435s (>= warning threshold 500ms)
+W190605 22:09:27.228925 126 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.3s [processed=1]
+W190605 22:09:27.257351 203 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:09:27.260302 198 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:09:27.260526 124 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:09:27.260577 123 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:09:34.528906 222 server/status/runtime.go:500  [n1] runtime stats: 188 MiB RSS, 173 goroutines, 104 MiB/46 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 180.4 CGO/sec, 0.5/0.2 %(u/s)time, 0.0 %gc (0x), 658 B/325 B (r/w)net
+W190605 22:09:37.208190 170 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:09:37.211386 150 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:09:37.211544 153 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+W190605 22:09:42.368782 166 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 612.8365ms (>= warning threshold 500ms)
+W190605 22:09:42.418796 176 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 3.0s [processed=1]
+W190605 22:09:42.418823 166 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:09:44.809786 181 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+W190605 22:09:47.528573 222 server/status/runtime.go:433  [n1] problem fetching disk stats: context deadline exceeded; disk stats will be empty.
+I190605 22:09:47.541366 222 server/status/runtime.go:500  [n1] runtime stats: 188 MiB RSS, 174 goroutines, 116 MiB/33 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 139.8 CGO/sec, 0.7/0.1 %(u/s)time, 0.0 %gc (0x), 20 KiB/7.7 KiB (r/w)net
+W190605 22:09:51.632316 194 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+W190605 22:09:57.697199 125 storage/engine/rocksdb.go:2040  batch [2/15216/0] commit took 1.0191501s (>= warning threshold 500ms)
+W190605 22:09:57.725618 198 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.0s [processed=1]
+W190605 22:09:57.763720 125 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.1s [processed=1]
+W190605 22:09:57.765794 197 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.1s [processed=1]
+W190605 22:09:57.766025 123 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.9s [processed=1]
+I190605 22:09:57.856835 222 server/status/runtime.go:500  [n1] runtime stats: 188 MiB RSS, 177 goroutines, 122 MiB/27 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 285.6 CGO/sec, 0.9/0.9 %(u/s)time, 0.0 %gc (0x), 19 KiB/960 B (r/w)net
+W190605 22:10:01.242611 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+W190605 22:10:01.242959 151 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:10:03.017996 152 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:10:07.466625 173 storage/engine/rocksdb.go:2040  batch [2/23688/0] commit took 889.4152ms (>= warning threshold 500ms)
+W190605 22:10:07.511214 170 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:10:07.548731 173 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.0s [processed=1]
+W190605 22:10:07.550005 160 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.9s [processed=1]
+W190605 22:10:07.552690 158 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.9s [processed=1]
+W190605 22:10:07.552799 150 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.9s [processed=1]
+I190605 22:10:08.169211 222 server/status/runtime.go:500  [n1] runtime stats: 189 MiB RSS, 174 goroutines, 129 MiB/21 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 180.5 CGO/sec, 1.5/1.5 %(u/s)time, 0.0 %gc (0x), 6.5 KiB/752 B (r/w)net
+W190605 22:10:10.039967 171 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:10:10.099730 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:10:13.624285 177 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 2.7s [processed=1]
+I190605 22:10:16.726695 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:10:18.471940 222 server/status/runtime.go:500  [n1] runtime stats: 189 MiB RSS, 176 goroutines, 134 MiB/15 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 191.1 CGO/sec, 1.1/0.9 %(u/s)time, 0.0 %gc (0x), 7.7 KiB/1.8 KiB (r/w)net
+W190605 22:10:19.385063 181 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 2.707771s (>= warning threshold 500ms)
+W190605 22:10:19.506114 181 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 2.8s [processed=1]
+W190605 22:10:19.508037 184 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 2.8s [processed=1]
+W190605 22:10:19.508042 188 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 2.8s [processed=1]
+W190605 22:10:19.508105 163 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 2.8s [processed=1]
+W190605 22:10:19.508116 187 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.8s [processed=1]
+W190605 22:10:19.508119 183 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.8s [processed=1]
+W190605 22:10:19.508235 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.8s
+W190605 22:10:23.294347 185 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 1.0381965s (>= warning threshold 500ms)
+W190605 22:10:23.332716 196 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:10:23.332851 185 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:10:23.371650 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+I190605 22:10:28.766901 222 server/status/runtime.go:500  [n1] runtime stats: 189 MiB RSS, 173 goroutines, 141 MiB/8.4 MiB/165 MiB GO alloc/idle/total, 52 MiB/65 MiB CGO alloc/total, 193.3 CGO/sec, 0.6/0.8 %(u/s)time, 0.0 %gc (1x), 346 KiB/71 KiB (r/w)net
+W190605 22:10:33.206625 151 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+W190605 22:10:36.694310 165 storage/engine/rocksdb.go:2040  batch [2/192/2] commit took 614.6886ms (>= warning threshold 500ms)
+W190605 22:10:36.694713 165 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+I190605 22:10:39.073457 222 server/status/runtime.go:500  [n1] runtime stats: 189 MiB RSS, 173 goroutines, 78 MiB/68 MiB/165 MiB GO alloc/idle/total, 52 MiB/64 MiB CGO alloc/total, 187.5 CGO/sec, 1.1/1.7 %(u/s)time, 0.0 %gc (0x), 38 KiB/20 KiB (r/w)net
+I190605 22:10:49.425154 222 server/status/runtime.go:500  [n1] runtime stats: 190 MiB RSS, 174 goroutines, 85 MiB/62 MiB/165 MiB GO alloc/idle/total, 52 MiB/65 MiB CGO alloc/total, 182.7 CGO/sec, 1.2/1.4 %(u/s)time, 0.0 %gc (0x), 84 KiB/42 KiB (r/w)net
+I190605 22:10:59.715186 222 server/status/runtime.go:500  [n1] runtime stats: 190 MiB RSS, 174 goroutines, 92 MiB/57 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 186.1 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 26 KiB/26 KiB (r/w)net
+W190605 22:11:04.375639 127 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:11:04.375763 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.6s
+I190605 22:11:10.014407 222 server/status/runtime.go:500  [n1] runtime stats: 190 MiB RSS, 174 goroutines, 98 MiB/51 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 159.3 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 7.2 KiB/5.8 KiB (r/w)net
+I190605 22:11:16.254744 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:11:17.472255 162 storage/engine/rocksdb.go:2040  batch [2/324/0] commit took 1.2985048s (>= warning threshold 500ms)
+W190605 22:11:17.571687 155 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.0s [processed=1]
+W190605 22:11:17.571769 162 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.4s [processed=1]
+W190605 22:11:17.571919 171 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:11:17.573489 172 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.9s [processed=1]
+W190605 22:11:17.573565 178 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.9s [processed=1]
+W190605 22:11:17.575473 177 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.9s [processed=1]
+W190605 22:11:17.675576 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.4s
+I190605 22:11:20.302146 222 server/status/runtime.go:500  [n1] runtime stats: 190 MiB RSS, 173 goroutines, 104 MiB/45 MiB/165 MiB GO alloc/idle/total, 52 MiB/65 MiB CGO alloc/total, 211.2 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 260 B/230 B (r/w)net
+W190605 22:11:25.932736 195 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 675.8901ms (>= warning threshold 500ms)
+W190605 22:11:25.971114 182 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:11:25.971235 195 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:11:30.615612 222 server/status/runtime.go:500  [n1] runtime stats: 191 MiB RSS, 173 goroutines, 111 MiB/39 MiB/165 MiB GO alloc/idle/total, 52 MiB/65 MiB CGO alloc/total, 189.8 CGO/sec, 0.8/1.1 %(u/s)time, 0.0 %gc (0x), 8.5 KiB/7.3 KiB (r/w)net
+W190605 22:11:38.204124 161 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.4s [processed=1]
+I190605 22:11:40.915190 222 server/status/runtime.go:500  [n1] runtime stats: 191 MiB RSS, 173 goroutines, 117 MiB/33 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 169.5 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 9.9 KiB/820 B (r/w)net
+W190605 22:11:44.245552 157 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 988.399ms (>= warning threshold 500ms)
+W190605 22:11:44.284884 158 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:11:44.284975 157 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:11:44.322741 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+W190605 22:11:49.199413 175 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:11:49.199529 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.4s
+I190605 22:11:51.222816 222 server/status/runtime.go:500  [n1] runtime stats: 191 MiB RSS, 174 goroutines, 123 MiB/27 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 183.2 CGO/sec, 0.5/0.5 %(u/s)time, 0.0 %gc (0x), 13 KiB/5.8 KiB (r/w)net
+W190605 22:11:59.906924 126 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+I190605 22:12:01.520550 222 server/status/runtime.go:500  [n1] runtime stats: 191 MiB RSS, 174 goroutines, 129 MiB/21 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 180.2 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (0x), 35 KiB/18 KiB (r/w)net
+W190605 22:12:02.177111 147 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+I190605 22:12:11.815266 222 server/status/runtime.go:500  [n1] runtime stats: 192 MiB RSS, 174 goroutines, 135 MiB/15 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 181.6 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 961 B/3.2 KiB (r/w)net
+I190605 22:12:16.260174 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:12:20.033129 169 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+I190605 22:12:22.118545 222 server/status/runtime.go:500  [n1] runtime stats: 192 MiB RSS, 173 goroutines, 141 MiB/8.6 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 201.6 CGO/sec, 0.3/0.8 %(u/s)time, 0.0 %gc (0x), 386 B/452 B (r/w)net
+W190605 22:12:24.332405 202 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 575.5758ms (>= warning threshold 500ms)
+W190605 22:12:24.372078 183 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:12:24.372083 202 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:12:32.415165 222 server/status/runtime.go:500  [n1] runtime stats: 192 MiB RSS, 174 goroutines, 148 MiB/2.6 MiB/165 MiB GO alloc/idle/total, 52 MiB/66 MiB CGO alloc/total, 173.4 CGO/sec, 1.7/0.5 %(u/s)time, 0.0 %gc (1x), 18 KiB/13 KiB (r/w)net
+I190605 22:12:42.710829 222 server/status/runtime.go:500  [n1] runtime stats: 192 MiB RSS, 173 goroutines, 81 MiB/66 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 174.1 CGO/sec, 1.1/1.2 %(u/s)time, 0.0 %gc (0x), 4.8 KiB/2.8 KiB (r/w)net
+I190605 22:12:53.013389 222 server/status/runtime.go:500  [n1] runtime stats: 192 MiB RSS, 174 goroutines, 88 MiB/60 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 199.1 CGO/sec, 0.8/0.9 %(u/s)time, 0.0 %gc (0x), 2.8 KiB/6.3 KiB (r/w)net
+I190605 22:13:03.315288 222 server/status/runtime.go:500  [n1] runtime stats: 193 MiB RSS, 174 goroutines, 95 MiB/54 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 176.6 CGO/sec, 0.8/0.2 %(u/s)time, 0.0 %gc (0x), 1.3 KiB/1.6 KiB (r/w)net
+W190605 22:13:10.240074 165 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.5s [processed=1]
+W190605 22:13:10.240260 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+W190605 22:13:11.894351 170 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+I190605 22:13:13.628195 222 server/status/runtime.go:500  [n1] runtime stats: 193 MiB RSS, 175 goroutines, 101 MiB/48 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 168.7 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 853 B/571 B (r/w)net
+W190605 22:13:14.060193 152 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+I190605 22:13:16.254875 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:13:17.253653 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 1.1723174s (>= warning threshold 500ms)
+W190605 22:13:17.363935 158 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.8s [processed=1]
+W190605 22:13:17.364136 173 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+W190605 22:13:17.366203 153 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.7s [processed=1]
+W190605 22:13:17.366239 157 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.7s [processed=1]
+I190605 22:13:23.928179 222 server/status/runtime.go:500  [n1] runtime stats: 193 MiB RSS, 173 goroutines, 107 MiB/42 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 209.3 CGO/sec, 0.2/0.5 %(u/s)time, 0.0 %gc (0x), 39 KiB/11 KiB (r/w)net
+I190605 22:13:34.229163 222 server/status/runtime.go:500  [n1] runtime stats: 193 MiB RSS, 174 goroutines, 114 MiB/36 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 185.3 CGO/sec, 0.5/0.5 %(u/s)time, 0.0 %gc (0x), 476 B/364 B (r/w)net
+W190605 22:13:34.824683 198 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.4s [processed=1]
+W190605 22:13:37.138354 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 1.0559009s (>= warning threshold 500ms)
+W190605 22:13:37.166754 156 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:13:37.204495 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.4s
+W190605 22:13:37.233486 201 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:13:37.236202 197 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:13:37.236440 154 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+W190605 22:13:41.289901 150 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 1.0338003s (>= warning threshold 500ms)
+W190605 22:13:41.327912 164 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+W190605 22:13:41.327951 150 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:13:41.328052 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+I190605 22:13:44.525395 222 server/status/runtime.go:500  [n1] runtime stats: 194 MiB RSS, 173 goroutines, 120 MiB/30 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 180.0 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 226 B/217 B (r/w)net
+W190605 22:13:46.361126 176 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:13:46.441363 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.7s
+W190605 22:13:52.533155 149 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:13:54.803364 169 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:13:54.803704 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+I190605 22:13:54.825990 222 server/status/runtime.go:500  [n1] runtime stats: 194 MiB RSS, 175 goroutines, 126 MiB/24 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 188.1 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 466 B/360 B (r/w)net
+W190605 22:13:57.359006 182 storage/engine/rocksdb.go:2040  batch [2/15218/0] commit took 681.102ms (>= warning threshold 500ms)
+W190605 22:13:57.388011 189 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.7s [processed=1]
+W190605 22:13:57.425919 182 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.7s [processed=1]
+W190605 22:13:57.427864 199 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.7s [processed=1]
+W190605 22:14:03.825291 203 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 1.0691816s (>= warning threshold 500ms)
+W190605 22:14:03.852569 203 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:14:03.852569 200 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.2s [processed=1]
+W190605 22:14:03.852694 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+I190605 22:14:05.126530 222 server/status/runtime.go:500  [n1] runtime stats: 194 MiB RSS, 174 goroutines, 132 MiB/18 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 185.8 CGO/sec, 0.9/1.1 %(u/s)time, 0.0 %gc (0x), 7.5 KiB/5.3 KiB (r/w)net
+I190605 22:14:15.422192 222 server/status/runtime.go:500  [n1] runtime stats: 194 MiB RSS, 174 goroutines, 138 MiB/12 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 178.6 CGO/sec, 0.5/0.8 %(u/s)time, 0.0 %gc (0x), 7.9 KiB/4.4 KiB (r/w)net
+I190605 22:14:16.271714 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:14:17.145525 150 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 971.3816ms (>= warning threshold 500ms)
+W190605 22:14:17.222698 158 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:14:17.222855 150 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:14:17.223346 176 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:14:17.225604 153 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:14:17.225724 162 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+W190605 22:14:17.288933 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+W190605 22:14:20.097905 178 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.7s [processed=1]
+W190605 22:14:21.742340 163 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:14:21.780132 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+I190605 22:14:25.724336 222 server/status/runtime.go:500  [n1] runtime stats: 194 MiB RSS, 173 goroutines, 144 MiB/5.5 MiB/165 MiB GO alloc/idle/total, 60 MiB/74 MiB CGO alloc/total, 217.3 CGO/sec, 1.8/0.6 %(u/s)time, 0.0 %gc (1x), 260 B/356 B (r/w)net
+W190605 22:14:28.372251 199 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+I190605 22:14:36.038556 222 server/status/runtime.go:500  [n1] runtime stats: 195 MiB RSS, 173 goroutines, 81 MiB/66 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 169.2 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 1.5 KiB/1.5 KiB (r/w)net
+W190605 22:14:37.327895 126 storage/engine/rocksdb.go:2040  batch [2/23688/0] commit took 757.9856ms (>= warning threshold 500ms)
+W190605 22:14:37.383038 126 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.8s [processed=1]
+W190605 22:14:37.383892 198 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.7s [processed=1]
+W190605 22:14:37.387099 147 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.7s [processed=1]
+W190605 22:14:37.387267 129 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.7s [processed=1]
+W190605 22:14:44.662047 167 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:14:44.700575 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.4s
+I190605 22:14:46.349344 222 server/status/runtime.go:500  [n1] runtime stats: 195 MiB RSS, 173 goroutines, 94 MiB/55 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 174.6 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 281 B/637 B (r/w)net
+W190605 22:14:47.196621 158 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:14:47.224207 166 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:14:47.228081 150 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:14:47.228197 157 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+W190605 22:14:50.088129 177 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+W190605 22:14:52.946126 184 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 689.906ms (>= warning threshold 500ms)
+W190605 22:14:52.974231 178 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:14:52.974404 184 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:14:56.659607 222 server/status/runtime.go:500  [n1] runtime stats: 195 MiB RSS, 174 goroutines, 100 MiB/48 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 197.7 CGO/sec, 0.8/0.1 %(u/s)time, 0.0 %gc (0x), 248 B/546 B (r/w)net
+W190605 22:14:58.798548 199 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:15:04.504809 203 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:15:06.440474 200 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:15:06.959882 222 server/status/runtime.go:500  [n1] runtime stats: 196 MiB RSS, 174 goroutines, 106 MiB/43 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 232.4 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 362 KiB/50 KiB (r/w)net
+W190605 22:15:10.766398 156 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 510.0815ms (>= warning threshold 500ms)
+W190605 22:15:10.804503 154 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 22:15:10.804515 156 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=1]
+W190605 22:15:15.230721 167 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 22:15:15.268715 159 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=1]
+I190605 22:15:16.254638 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:15:17.258583 222 server/status/runtime.go:500  [n1] runtime stats: 196 MiB RSS, 173 goroutines, 113 MiB/37 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 238.1 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 626 B/656 B (r/w)net
+W190605 22:15:19.957909 188 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 701.3692ms (>= warning threshold 500ms)
+W190605 22:15:19.997204 178 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:15:19.997285 188 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:15:26.511866 202 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:15:27.575235 222 server/status/runtime.go:500  [n1] runtime stats: 196 MiB RSS, 173 goroutines, 119 MiB/31 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 174.8 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 762 B/354 B (r/w)net
+I190605 22:15:37.882928 222 server/status/runtime.go:500  [n1] runtime stats: 196 MiB RSS, 173 goroutines, 125 MiB/25 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 178.1 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 13 KiB/1.2 KiB (r/w)net
+W190605 22:15:38.057012 128 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:15:42.296020 156 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=2]
+W190605 22:15:47.637815 161 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 1.381783s (>= warning threshold 500ms)
+W190605 22:15:47.715190 159 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.1s [processed=1]
+W190605 22:15:47.715207 161 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.5s [processed=1]
+W190605 22:15:47.717153 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.5s
+W190605 22:15:47.717197 152 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.0s [processed=1]
+W190605 22:15:47.717312 164 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.0s [processed=1]
+W190605 22:15:47.719272 155 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+I190605 22:15:48.185553 222 server/status/runtime.go:500  [n1] runtime stats: 197 MiB RSS, 174 goroutines, 131 MiB/19 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 182.9 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (0x), 13 KiB/3.5 KiB (r/w)net
+W190605 22:15:51.442323 172 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:15:55.756602 179 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=1]
+W190605 22:15:55.756602 188 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:15:58.496511 222 server/status/runtime.go:500  [n1] runtime stats: 197 MiB RSS, 174 goroutines, 137 MiB/13 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 175.3 CGO/sec, 0.2/0.3 %(u/s)time, 0.0 %gc (0x), 8.0 KiB/12 KiB (r/w)net
+W190605 22:16:02.949465 185 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:16:08.325027 127 storage/engine/rocksdb.go:2040  batch [2/38463/0] commit took 1.6211999s (>= warning threshold 500ms)
+W190605 22:16:08.380943 200 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.7s [processed=1]
+W190605 22:16:08.381142 126 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.7s [processed=1]
+W190605 22:16:08.383018 127 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.7s [processed=1]
+I190605 22:16:08.805407 222 server/status/runtime.go:500  [n1] runtime stats: 197 MiB RSS, 174 goroutines, 143 MiB/6.5 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 166.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 2.3 KiB/1.2 KiB (r/w)net
+I190605 22:16:16.261007 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:16:18.006742 150 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.2s [processed=1]
+I190605 22:16:19.100283 222 server/status/runtime.go:500  [n1] runtime stats: 197 MiB RSS, 173 goroutines, 78 MiB/70 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 227.5 CGO/sec, 1.2/0.6 %(u/s)time, 0.0 %gc (1x), 112 B/55 B (r/w)net
+W190605 22:16:23.191268 172 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 934.1349ms (>= warning threshold 500ms)
+W190605 22:16:23.218603 162 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:16:23.218615 172 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:16:23.256958 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+W190605 22:16:27.099519 178 storage/engine/rocksdb.go:2040  batch [2/23689/0] commit took 534.2581ms (>= warning threshold 500ms)
+W190605 22:16:27.165693 178 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+I190605 22:16:29.406521 222 server/status/runtime.go:500  [n1] runtime stats: 197 MiB RSS, 173 goroutines, 84 MiB/63 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 174.4 CGO/sec, 0.2/0.3 %(u/s)time, 0.0 %gc (0x), 6.5 KiB/646 B (r/w)net
+W190605 22:16:36.524065 194 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+I190605 22:16:39.705446 222 server/status/runtime.go:500  [n1] runtime stats: 198 MiB RSS, 173 goroutines, 91 MiB/57 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 167.3 CGO/sec, 0.6/1.1 %(u/s)time, 0.0 %gc (0x), 33 KiB/16 KiB (r/w)net
+W190605 22:16:45.289486 154 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.5s [processed=2]
+W190605 22:16:47.086043 160 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.5s [processed=1]
+I190605 22:16:50.005729 222 server/status/runtime.go:500  [n1] runtime stats: 198 MiB RSS, 174 goroutines, 98 MiB/51 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 197.2 CGO/sec, 0.5/0.8 %(u/s)time, 0.0 %gc (0x), 34 KiB/16 KiB (r/w)net
+W190605 22:16:58.043028 184 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 1.3647712s (>= warning threshold 500ms)
+W190605 22:16:58.120765 184 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.4s [processed=1]
+W190605 22:16:58.123244 168 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.3s [processed=1]
+W190605 22:16:58.123435 178 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.4s [processed=1]
+W190605 22:16:58.123463 202 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.4s [processed=1]
+I190605 22:17:00.312410 222 server/status/runtime.go:500  [n1] runtime stats: 198 MiB RSS, 174 goroutines, 104 MiB/45 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 168.9 CGO/sec, 0.3/0.0 %(u/s)time, 0.0 %gc (0x), 57 KiB/36 KiB (r/w)net
+W190605 22:17:05.892949 195 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:17:07.965370 194 storage/engine/rocksdb.go:2040  batch [2/15219/0] commit took 1.2917829s (>= warning threshold 500ms)
+W190605 22:17:08.022087 191 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.3s [processed=1]
+W190605 22:17:08.076061 194 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.4s [processed=1]
+W190605 22:17:08.078323 125 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.4s [processed=1]
+W190605 22:17:08.078346 203 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+I190605 22:17:10.613630 222 server/status/runtime.go:500  [n1] runtime stats: 198 MiB RSS, 174 goroutines, 110 MiB/39 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 174.0 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (0x), 36 KiB/131 KiB (r/w)net
+W190605 22:17:13.496107 123 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 1.7385896s (>= warning threshold 500ms)
+W190605 22:17:13.523965 197 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.8s [processed=1]
+W190605 22:17:13.523965 123 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.8s [processed=1]
+W190605 22:17:13.524211 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.8s
+I190605 22:17:16.255670 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:17:17.476718 165 storage/engine/rocksdb.go:2040  batch [2/23689/0] commit took 911.9102ms (>= warning threshold 500ms)
+W190605 22:17:17.504349 128 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 22:17:17.542953 165 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.0s [processed=1]
+W190605 22:17:17.542956 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:17:17.544180 154 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.9s [processed=1]
+W190605 22:17:17.547584 156 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.9s [processed=1]
+W190605 22:17:17.547715 160 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.9s [processed=1]
+I190605 22:17:20.920491 222 server/status/runtime.go:500  [n1] runtime stats: 199 MiB RSS, 173 goroutines, 117 MiB/33 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 205.5 CGO/sec, 0.3/0.4 %(u/s)time, 0.0 %gc (0x), 638 B/256 B (r/w)net
+W190605 22:17:21.809052 152 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.1s [processed=1]
+W190605 22:17:21.836125 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.1s
+W190605 22:17:24.189587 166 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.3s [processed=1]
+W190605 22:17:30.583142 179 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 827.005ms (>= warning threshold 500ms)
+W190605 22:17:30.622195 179 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+W190605 22:17:30.622195 149 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+I190605 22:17:31.231750 222 server/status/runtime.go:500  [n1] runtime stats: 199 MiB RSS, 173 goroutines, 123 MiB/27 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 176.4 CGO/sec, 0.8/0.8 %(u/s)time, 0.0 %gc (0x), 7.0 KiB/3.1 KiB (r/w)net
+W190605 22:17:37.158240 193 storage/engine/rocksdb.go:2040  batch [2/23689/0] commit took 580.5344ms (>= warning threshold 500ms)
+W190605 22:17:37.224232 193 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:17:37.224912 195 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:17:37.227067 190 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:17:37.227201 199 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+I190605 22:17:41.530567 222 server/status/runtime.go:500  [n1] runtime stats: 199 MiB RSS, 174 goroutines, 129 MiB/21 MiB/165 MiB GO alloc/idle/total, 58 MiB/74 MiB CGO alloc/total, 172.5 CGO/sec, 0.5/0.1 %(u/s)time, 0.0 %gc (0x), 5.9 KiB/4.0 KiB (r/w)net
+W190605 22:17:41.601202 203 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:17:43.948481 127 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:17:47.191991 165 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:17:47.230536 159 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:17:47.231581 154 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:17:47.233995 167 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:17:51.836175 222 server/status/runtime.go:500  [n1] runtime stats: 199 MiB RSS, 174 goroutines, 135 MiB/15 MiB/165 MiB GO alloc/idle/total, 58 MiB/74 MiB CGO alloc/total, 195.0 CGO/sec, 0.8/0.2 %(u/s)time, 0.0 %gc (0x), 464 B/179 B (r/w)net
+I190605 22:18:02.132381 222 server/status/runtime.go:500  [n1] runtime stats: 199 MiB RSS, 174 goroutines, 141 MiB/9.0 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 186.6 CGO/sec, 0.2/0.1 %(u/s)time, 0.0 %gc (1x), 0 B/138 B (r/w)net
+W190605 22:18:06.648715 183 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 891.931ms (>= warning threshold 500ms)
+W190605 22:18:06.687153 187 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:18:06.726098 183 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:18:08.089489 200 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+I190605 22:18:12.432880 222 server/status/runtime.go:500  [n1] runtime stats: 200 MiB RSS, 174 goroutines, 78 MiB/68 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 167.7 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 595 B/472 B (r/w)net
+W190605 22:18:15.565391 197 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:18:16.275567 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:18:22.731737 222 server/status/runtime.go:500  [n1] runtime stats: 200 MiB RSS, 173 goroutines, 85 MiB/62 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 211.1 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (0x), 346 B/262 B (r/w)net
+W190605 22:18:28.138510 180 storage/engine/rocksdb.go:2040  batch [2/15219/0] commit took 1.4620787s (>= warning threshold 500ms)
+W190605 22:18:28.193633 178 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.5s [processed=1]
+W190605 22:18:28.227664 180 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.6s [processed=1]
+W190605 22:18:28.267710 163 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.6s [processed=1]
+I190605 22:18:33.030101 222 server/status/runtime.go:500  [n1] runtime stats: 200 MiB RSS, 173 goroutines, 92 MiB/56 MiB/165 MiB GO alloc/idle/total, 59 MiB/74 MiB CGO alloc/total, 175.7 CGO/sec, 0.6/0.9 %(u/s)time, 0.0 %gc (0x), 236 B/284 B (r/w)net
+W190605 22:18:35.747972 182 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:18:37.710821 183 storage/engine/rocksdb.go:2040  batch [138/15146/2] commit took 972.3747ms (>= warning threshold 500ms)
+W190605 22:18:37.711003 183 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.0s [processed=1]
+W190605 22:18:37.713288 193 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+I190605 22:18:43.329703 222 server/status/runtime.go:500  [n1] runtime stats: 200 MiB RSS, 173 goroutines, 98 MiB/50 MiB/165 MiB GO alloc/idle/total, 58 MiB/74 MiB CGO alloc/total, 192.7 CGO/sec, 0.2/0.2 %(u/s)time, 0.0 %gc (0x), 264 B/379 B (r/w)net
+W190605 22:18:44.533102 148 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 22:18:46.902622 176 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 646.5166ms (>= warning threshold 500ms)
+W190605 22:18:46.958281 176 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:18:51.224188 153 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:18:53.628666 222 server/status/runtime.go:500  [n1] runtime stats: 200 MiB RSS, 174 goroutines, 104 MiB/45 MiB/165 MiB GO alloc/idle/total, 58 MiB/74 MiB CGO alloc/total, 182.6 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 456 B/1.1 KiB (r/w)net
+W190605 22:18:55.698863 171 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+W190605 22:19:00.321595 188 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 565.2575ms (>= warning threshold 500ms)
+W190605 22:19:00.349572 169 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:19:00.349645 188 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:19:03.939618 222 server/status/runtime.go:500  [n1] runtime stats: 201 MiB RSS, 174 goroutines, 110 MiB/39 MiB/165 MiB GO alloc/idle/total, 58 MiB/74 MiB CGO alloc/total, 187.2 CGO/sec, 0.4/0.6 %(u/s)time, 0.0 %gc (0x), 14 KiB/8.3 KiB (r/w)net
+W190605 22:19:07.173007 124 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:19:07.207803 185 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:19:07.210809 126 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:19:07.210872 194 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+W190605 22:19:09.478466 203 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:19:14.231270 222 server/status/runtime.go:500  [n1] runtime stats: 201 MiB RSS, 174 goroutines, 117 MiB/33 MiB/165 MiB GO alloc/idle/total, 58 MiB/74 MiB CGO alloc/total, 176.0 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (0x), 4.5 KiB/2.0 KiB (r/w)net
+I190605 22:19:16.269556 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E190605 22:19:16.795965 30 storage/queue.go:930  [n1,replicate] 26 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+W190605 22:19:19.082856 165 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:19:19.083019 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:19:20.901881 167 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+W190605 22:19:22.919704 157 storage/engine/rocksdb.go:2040  batch [2/173/0] commit took 522.4072ms (>= warning threshold 500ms)
+W190605 22:19:22.947021 153 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:19:22.947311 157 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+I190605 22:19:24.530668 222 server/status/runtime.go:500  [n1] runtime stats: 201 MiB RSS, 173 goroutines, 123 MiB/27 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 217.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 422 B/146 B (r/w)net
+I190605 22:19:26.388455 217 storage/store.go:4204  [n1,s1] sstables (read amplification = 1):
+6 [ 9M 3 ]: 4M[2] 1M
+I190605 22:19:26.388586 217 storage/store.go:4205  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.0         2         1    1.887       0      0
+  L6      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0     -0.0       0.0  84.0      5.4      5.4         2         1    1.761     31K    470
+ Sum      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0      0.0       0.0 409.5      2.6      2.6         4         2    1.824     31K    470
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 1212.4 total, 600.1 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.01 GB write, 0.01 MB/s write, 0.01 GB read, 0.01 MB/s read, 3.6 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+W190605 22:19:32.562417 162 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=1]
+W190605 22:19:32.600360 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+I190605 22:19:34.857223 222 server/status/runtime.go:500  [n1] runtime stats: 202 MiB RSS, 173 goroutines, 129 MiB/21 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 177.6 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 5.1 KiB/2.9 KiB (r/w)net
+W190605 22:19:37.196415 183 storage/engine/rocksdb.go:2040  batch [2/15219/0] commit took 512.4713ms (>= warning threshold 500ms)
+W190605 22:19:37.236347 195 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:19:37.263538 183 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:19:37.265610 124 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+W190605 22:19:40.902071 147 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:19:45.154595 222 server/status/runtime.go:500  [n1] runtime stats: 202 MiB RSS, 175 goroutines, 135 MiB/14 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 175.8 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (0x), 1016 B/358 B (r/w)net
+W190605 22:19:47.433155 176 storage/engine/rocksdb.go:2040  batch [2/16741/0] commit took 755.7657ms (>= warning threshold 500ms)
+W190605 22:19:47.472076 128 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.9s [processed=1]
+W190605 22:19:47.500022 176 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.8s [processed=1]
+W190605 22:19:47.502113 170 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.8s [processed=1]
+W190605 22:19:47.502151 156 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.8s [processed=1]
+W190605 22:19:50.225513 167 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 968.9848ms (>= warning threshold 500ms)
+W190605 22:19:50.264294 160 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.1s [processed=1]
+W190605 22:19:50.264294 167 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:19:50.264443 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+I190605 22:19:55.449376 222 server/status/runtime.go:500  [n1] runtime stats: 202 MiB RSS, 174 goroutines, 142 MiB/8.6 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 200.2 CGO/sec, 0.5/0.8 %(u/s)time, 0.0 %gc (0x), 540 B/117 B (r/w)net
+I190605 22:20:05.745509 222 server/status/runtime.go:500  [n1] runtime stats: 202 MiB RSS, 174 goroutines, 148 MiB/2.3 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 173.3 CGO/sec, 1.4/0.3 %(u/s)time, 0.0 %gc (1x), 420 B/2 B (r/w)net
+W190605 22:20:12.761197 151 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:20:12.788452 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+W190605 22:20:14.773480 198 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+I190605 22:20:16.040873 222 server/status/runtime.go:500  [n1] runtime stats: 203 MiB RSS, 174 goroutines, 82 MiB/65 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 175.6 CGO/sec, 0.3/0.6 %(u/s)time, 0.0 %gc (0x), 464 B/146 B (r/w)net
+I190605 22:20:16.261071 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:20:26.347618 222 server/status/runtime.go:500  [n1] runtime stats: 203 MiB RSS, 173 goroutines, 89 MiB/60 MiB/165 MiB GO alloc/idle/total, 66 MiB/82 MiB CGO alloc/total, 211.4 CGO/sec, 0.1/0.3 %(u/s)time, 0.0 %gc (0x), 800 B/101 B (r/w)net
+W190605 22:20:27.126345 150 storage/engine/rocksdb.go:2040  batch [2/23689/0] commit took 562.8717ms (>= warning threshold 500ms)
+W190605 22:20:27.230341 150 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:20:27.230938 171 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:20:27.232764 174 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:20:27.232820 166 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:20:36.644796 222 server/status/runtime.go:500  [n1] runtime stats: 203 MiB RSS, 173 goroutines, 102 MiB/47 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 187.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 5.0 KiB/2.7 KiB (r/w)net
+W190605 22:20:39.347995 126 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:20:43.779126 124 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 522.8954ms (>= warning threshold 500ms)
+W190605 22:20:43.828401 125 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:20:43.880858 124 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:20:46.951679 222 server/status/runtime.go:500  [n1] runtime stats: 203 MiB RSS, 174 goroutines, 108 MiB/41 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 223.6 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 6.6 KiB/3.5 KiB (r/w)net
+W190605 22:20:47.136423 129 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:20:48.341773 170 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:20:50.695209 165 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+I190605 22:20:57.264947 222 server/status/runtime.go:500  [n1] runtime stats: 204 MiB RSS, 174 goroutines, 114 MiB/35 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 220.9 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 54 B/392 B (r/w)net
+W190605 22:21:03.433561 196 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 2.1764521s (>= warning threshold 500ms)
+W190605 22:21:03.510381 168 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 2.3s [processed=1]
+W190605 22:21:03.510467 196 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 2.3s [processed=1]
+W190605 22:21:03.631674 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 2.4s
+W190605 22:21:06.484203 192 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+I190605 22:21:07.564734 222 server/status/runtime.go:500  [n1] runtime stats: 204 MiB RSS, 174 goroutines, 121 MiB/29 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 165.4 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 29 KiB/13 KiB (r/w)net
+W190605 22:21:10.975136 126 storage/engine/rocksdb.go:2040  batch [2/177/0] commit took 500.0283ms (>= warning threshold 500ms)
+W190605 22:21:11.003833 183 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:11.004015 126 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+I190605 22:21:16.254918 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:21:17.868165 222 server/status/runtime.go:500  [n1] runtime stats: 204 MiB RSS, 173 goroutines, 127 MiB/23 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 213.7 CGO/sec, 0.4/0.3 %(u/s)time, 0.0 %gc (0x), 372 B/207 B (r/w)net
+W190605 22:21:19.827411 170 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:21:22.125419 155 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:27.704897 166 storage/engine/rocksdb.go:2040  batch [2/38800/0] commit took 995.2361ms (>= warning threshold 500ms)
+W190605 22:21:27.744562 172 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.1s [processed=1]
+W190605 22:21:27.744573 186 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.1s [processed=1]
+W190605 22:21:27.747144 166 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.1s [processed=1]
+I190605 22:21:28.174577 222 server/status/runtime.go:500  [n1] runtime stats: 204 MiB RSS, 173 goroutines, 133 MiB/16 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 182.9 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 308 B/243 B (r/w)net
+W190605 22:21:29.552274 180 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.1s [processed=1]
+W190605 22:21:33.427531 149 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 670.5858ms (>= warning threshold 500ms)
+W190605 22:21:33.456093 168 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:21:33.456103 149 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:37.860469 200 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 604.0594ms (>= warning threshold 500ms)
+W190605 22:21:37.888540 183 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:37.888540 200 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:21:38.467832 222 server/status/runtime.go:500  [n1] runtime stats: 204 MiB RSS, 173 goroutines, 139 MiB/10 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 187.1 CGO/sec, 0.2/0.6 %(u/s)time, 0.0 %gc (0x), 4.7 KiB/2.5 KiB (r/w)net
+W190605 22:21:42.419179 203 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:44.628133 194 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:46.822421 201 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 566.0426ms (>= warning threshold 500ms)
+W190605 22:21:46.888159 201 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:21:48.767215 222 server/status/runtime.go:500  [n1] runtime stats: 205 MiB RSS, 174 goroutines, 146 MiB/4.2 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 182.9 CGO/sec, 1.5/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/6 B (r/w)net
+W190605 22:21:51.286482 159 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 529.9658ms (>= warning threshold 500ms)
+W190605 22:21:51.324544 165 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:51.324560 159 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:21:55.788962 153 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 532.8298ms (>= warning threshold 500ms)
+W190605 22:21:55.828039 167 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:55.828056 153 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:21:57.229353 184 storage/engine/rocksdb.go:2040  batch [2/16885/0] commit took 553.1088ms (>= warning threshold 500ms)
+W190605 22:21:57.268032 152 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.7s [processed=1]
+W190605 22:21:57.296127 184 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:21:57.298475 174 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:21:57.298527 186 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:21:59.064659 222 server/status/runtime.go:500  [n1] runtime stats: 205 MiB RSS, 174 goroutines, 82 MiB/66 MiB/165 MiB GO alloc/idle/total, 65 MiB/81 MiB CGO alloc/total, 183.0 CGO/sec, 0.5/0.4 %(u/s)time, 0.0 %gc (0x), 3.6 KiB/569 B (r/w)net
+W190605 22:22:01.346930 196 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:22:01.375072 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.6s
+W190605 22:22:02.468916 168 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+W190605 22:22:09.351420 193 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 593.8231ms (>= warning threshold 500ms)
+I190605 22:22:09.365708 222 server/status/runtime.go:500  [n1] runtime stats: 205 MiB RSS, 176 goroutines, 88 MiB/59 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 163.8 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 12 KiB/805 B (r/w)net
+W190605 22:22:09.378688 185 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:22:09.378718 193 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:22:16.264555 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:22:16.844790 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 724.7292ms (>= warning threshold 500ms)
+W190605 22:22:16.895319 194 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.5s [processed=1]
+W190605 22:22:16.923297 198 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:22:19.363622 154 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:22:19.363811 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.6s
+I190605 22:22:19.658658 222 server/status/runtime.go:500  [n1] runtime stats: 205 MiB RSS, 173 goroutines, 95 MiB/54 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 213.8 CGO/sec, 0.5/0.1 %(u/s)time, 0.0 %gc (0x), 3.2 KiB/327 B (r/w)net
+W190605 22:22:21.380770 161 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.5s [processed=1]
+W190605 22:22:23.590865 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.3s
+W190605 22:22:23.591015 159 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.3s [processed=2]
+W190605 22:22:28.230652 157 storage/engine/rocksdb.go:2040  batch [2/324/0] commit took 1.5573168s (>= warning threshold 500ms)
+W190605 22:22:28.276052 153 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.7s [processed=1]
+W190605 22:22:28.330097 157 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.7s [processed=1]
+W190605 22:22:28.330215 175 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.6s [processed=1]
+W190605 22:22:28.331079 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.6s
+W190605 22:22:28.331140 181 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.7s [processed=1]
+W190605 22:22:28.334227 150 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.7s [processed=1]
+W190605 22:22:28.334290 152 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.7s [processed=1]
+I190605 22:22:29.952146 222 server/status/runtime.go:500  [n1] runtime stats: 206 MiB RSS, 173 goroutines, 101 MiB/47 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 175.7 CGO/sec, 0.5/0.2 %(u/s)time, 0.0 %gc (0x), 11 KiB/4.8 KiB (r/w)net
+W190605 22:22:38.275099 190 storage/engine/rocksdb.go:2040  batch [2/15356/0] commit took 1.5979853s (>= warning threshold 500ms)
+W190605 22:22:38.343109 149 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.7s [processed=1]
+W190605 22:22:38.343327 190 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.7s [processed=1]
+W190605 22:22:38.345591 195 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.7s [processed=1]
+I190605 22:22:40.249066 222 server/status/runtime.go:500  [n1] runtime stats: 206 MiB RSS, 173 goroutines, 108 MiB/41 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 170.6 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (0x), 418 B/404 B (r/w)net
+W190605 22:22:40.952907 183 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:22:43.800211 125 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.4s [processed=1]
+W190605 22:22:47.879793 194 storage/engine/rocksdb.go:2040  batch [2/23689/0] commit took 1.314705s (>= warning threshold 500ms)
+W190605 22:22:47.907616 147 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.4s [processed=1]
+W190605 22:22:47.945499 194 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.4s [processed=1]
+W190605 22:22:47.975333 129 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.3s [processed=1]
+W190605 22:22:47.975361 176 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.3s [processed=1]
+W190605 22:22:47.977797 173 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+I190605 22:22:50.545882 222 server/status/runtime.go:500  [n1] runtime stats: 206 MiB RSS, 174 goroutines, 114 MiB/35 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 201.2 CGO/sec, 0.2/0.8 %(u/s)time, 0.0 %gc (0x), 332 B/1.2 KiB (r/w)net
+W190605 22:22:56.082644 159 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+W190605 22:22:58.000627 181 storage/engine/rocksdb.go:2040  batch [2/38800/0] commit took 1.2920812s (>= warning threshold 500ms)
+W190605 22:22:58.040643 175 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.4s [processed=1]
+W190605 22:22:58.040824 174 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.4s [processed=1]
+W190605 22:22:58.042948 181 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.4s [processed=1]
+I190605 22:23:00.851647 222 server/status/runtime.go:500  [n1] runtime stats: 206 MiB RSS, 174 goroutines, 120 MiB/29 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 183.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 9.4 KiB/598 B (r/w)net
+W190605 22:23:09.320397 192 storage/engine/rocksdb.go:2040  batch [2/16885/0] commit took 2.6441207s (>= warning threshold 500ms)
+W190605 22:23:09.400253 168 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 2.8s [processed=1]
+W190605 22:23:09.431527 192 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 2.8s [processed=1]
+W190605 22:23:09.434215 189 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 2.8s [processed=1]
+W190605 22:23:09.434247 149 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 2.8s [processed=1]
+W190605 22:23:09.434380 169 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 2.2s [processed=1]
+W190605 22:23:09.601173 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 2.3s
+I190605 22:23:11.149442 222 server/status/runtime.go:500  [n1] runtime stats: 206 MiB RSS, 174 goroutines, 126 MiB/23 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 172.4 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 14 KiB/2.8 KiB (r/w)net
+W190605 22:23:12.806499 200 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:23:12.806801 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+W190605 22:23:14.960281 148 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.0s [processed=1]
+I190605 22:23:16.254760 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:23:17.132303 197 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 875.9197ms (>= warning threshold 500ms)
+W190605 22:23:17.198439 129 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:23:17.198463 197 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+W190605 22:23:17.200584 176 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:23:17.200621 198 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:23:17.202602 127 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+I190605 22:23:21.460035 222 server/status/runtime.go:500  [n1] runtime stats: 206 MiB RSS, 175 goroutines, 133 MiB/16 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 204.4 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 192 B/55 B (r/w)net
+W190605 22:23:21.893372 170 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 1.1367252s (>= warning threshold 500ms)
+W190605 22:23:21.931777 158 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 1.3s [processed=1]
+W190605 22:23:21.931833 170 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.2s [processed=1]
+W190605 22:23:21.959674 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.2s
+W190605 22:23:26.011315 164 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 742.0046ms (>= warning threshold 500ms)
+W190605 22:23:26.039360 167 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+W190605 22:23:26.039375 164 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:23:27.627779 175 storage/engine/rocksdb.go:2040  batch [2/15356/0] commit took 951.5141ms (>= warning threshold 500ms)
+W190605 22:23:27.655360 166 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.0s [processed=1]
+W190605 22:23:27.705972 175 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.0s [processed=1]
+W190605 22:23:27.708814 150 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+I190605 22:23:31.772796 222 server/status/runtime.go:500  [n1] runtime stats: 207 MiB RSS, 173 goroutines, 139 MiB/10 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 177.4 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 4.8 KiB/2.7 KiB (r/w)net
+W190605 22:23:32.564929 202 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 22:23:39.447579 183 storage/engine/rocksdb.go:2040  batch [3/495/0] commit took 690.4205ms (>= warning threshold 500ms)
+W190605 22:23:39.497744 199 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:23:39.498015 183 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=2]
+I190605 22:23:42.073711 222 server/status/runtime.go:500  [n1] runtime stats: 207 MiB RSS, 173 goroutines, 145 MiB/4.6 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 188.4 CGO/sec, 0.5/0.6 %(u/s)time, 0.0 %gc (1x), 234 B/270 B (r/w)net
+W190605 22:23:46.017224 203 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+W190605 22:23:47.199523 125 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+W190605 22:23:47.227390 200 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+W190605 22:23:47.230656 151 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.6s [processed=1]
+W190605 22:23:47.230811 148 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:23:52.373848 222 server/status/runtime.go:500  [n1] runtime stats: 207 MiB RSS, 174 goroutines, 81 MiB/66 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 182.0 CGO/sec, 0.5/0.6 %(u/s)time, 0.0 %gc (0x), 4.3 KiB/2.0 KiB (r/w)net
+W190605 22:23:52.965761 158 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 709.0039ms (>= warning threshold 500ms)
+W190605 22:23:53.009530 158 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:23:53.009554 154 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.8s [processed=1]
+W190605 22:24:01.998386 177 storage/engine/rocksdb.go:2040  batch [2/221/0] commit took 729.8938ms (>= warning threshold 500ms)
+W190605 22:24:02.048652 177 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:24:02.048652 152 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.9s [processed=1]
+I190605 22:24:02.678645 222 server/status/runtime.go:500  [n1] runtime stats: 207 MiB RSS, 174 goroutines, 88 MiB/60 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 186.2 CGO/sec, 0.4/0.3 %(u/s)time, 0.0 %gc (0x), 4.4 KiB/2.2 KiB (r/w)net
+W190605 22:24:06.701178 116 storage/engine/rocksdb.go:2040  batch [0/14/0] commit took 572.285ms (>= warning threshold 500ms)
+W190605 22:24:06.754752 196 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 1.0s [processed=1]
+W190605 22:24:06.798153 245 storage/node_liveness.go:523  [n1,hb] slow heartbeat took 1.0s
+W190605 22:24:08.629434 182 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+I190605 22:24:12.972196 222 server/status/runtime.go:500  [n1] runtime stats: 207 MiB RSS, 175 goroutines, 94 MiB/54 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 169.6 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 23 KiB/10 KiB (r/w)net
+W190605 22:24:13.967636 183 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.3s [processed=1]
+I190605 22:24:16.263199 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:24:16.903015 125 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 729.4978ms (>= warning threshold 500ms)
+W190605 22:24:16.969644 125 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:24:20.080729 201 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:24:21.276144 128 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.6s [processed=1]
+I190605 22:24:23.281103 222 server/status/runtime.go:500  [n1] runtime stats: 207 MiB RSS, 173 goroutines, 101 MiB/48 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 206.5 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 7.1 KiB/4.2 KiB (r/w)net
+W190605 22:24:24.585290 154 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.8s [processed=1]
+W190605 22:24:27.592471 153 storage/engine/rocksdb.go:2040  batch [2/16885/0] commit took 919.1283ms (>= warning threshold 500ms)
+W190605 22:24:27.631765 184 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 1.1s [processed=1]
+W190605 22:24:27.681792 153 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 1.0s [processed=1]
+W190605 22:24:27.684961 157 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 1.0s [processed=1]
+W190605 22:24:27.684990 160 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 1.0s [processed=1]
+W190605 22:24:31.083804 152 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:24:33.195186 171 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.6s [processed=1]
+I190605 22:24:33.586742 222 server/status/runtime.go:500  [n1] runtime stats: 208 MiB RSS, 173 goroutines, 107 MiB/42 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 195.4 CGO/sec, 1.1/0.9 %(u/s)time, 0.0 %gc (0x), 30 KiB/31 KiB (r/w)net
+W190605 22:24:37.741005 182 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:24:43.886368 222 server/status/runtime.go:500  [n1] runtime stats: 208 MiB RSS, 173 goroutines, 114 MiB/36 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 163.4 CGO/sec, 0.3/0.2 %(u/s)time, 0.0 %gc (0x), 5.2 KiB/10 KiB (r/w)net
+W190605 22:24:44.646378 203 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.7s [processed=1]
+W190605 22:24:46.850860 124 storage/engine/rocksdb.go:2040  batch [2/325/0] commit took 594.8007ms (>= warning threshold 500ms)
+W190605 22:24:46.928391 124 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.7s [processed=1]
+W190605 22:24:48.972618 123 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.5s [processed=1]
+W190605 22:24:53.497634 155 storage/store.go:3692  [n1,s1,r1/1:/{Min-System/NodeL…}] handle raft ready: 0.6s [processed=1]
+I190605 22:24:54.200195 222 server/status/runtime.go:500  [n1] runtime stats: 208 MiB RSS, 174 goroutines, 120 MiB/30 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 201.4 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 152 B/1.0 KiB (r/w)net
+I190605 22:25:04.507029 222 server/status/runtime.go:500  [n1] runtime stats: 208 MiB RSS, 174 goroutines, 126 MiB/24 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 167.8 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 11 KiB/4.1 KiB (r/w)net
+W190605 22:25:09.375198 180 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+W190605 22:25:13.839068 183 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:25:14.803462 222 server/status/runtime.go:500  [n1] runtime stats: 209 MiB RSS, 174 goroutines, 132 MiB/18 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 179.5 CGO/sec, 0.8/0.2 %(u/s)time, 0.0 %gc (0x), 1.1 KiB/2.2 KiB (r/w)net
+I190605 22:25:16.254756 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W190605 22:25:17.125778 197 storage/store.go:3692  [n1,s1,r3/1:/System/{NodeLive…-tsd}] handle raft ready: 0.6s [processed=1]
+I190605 22:25:25.095960 222 server/status/runtime.go:500  [n1] runtime stats: 209 MiB RSS, 173 goroutines, 138 MiB/12 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 222.9 CGO/sec, 0.4/0.9 %(u/s)time, 0.0 %gc (0x), 140 B/0 B (r/w)net
+I190605 22:25:35.385241 222 server/status/runtime.go:500  [n1] runtime stats: 209 MiB RSS, 173 goroutines, 144 MiB/5.5 MiB/165 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 167.2 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (1x), 180 B/212 B (r/w)net
+I190605 22:25:45.684019 222 server/status/runtime.go:500  [n1] runtime stats: 210 MiB RSS, 173 goroutines, 79 MiB/71 MiB/169 MiB GO alloc/idle/total, 64 MiB/81 MiB CGO alloc/total, 181.6 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 6.9 KiB/3.3 KiB (r/w)net
+W190605 22:25:58.684986 222 server/status/runtime.go:433  [n1] problem fetching disk stats: context deadline exceeded; disk stats will be empty.
+I190605 22:25:58.712030 222 server/status/runtime.go:500  [n1] runtime stats: 210 MiB RSS, 174 goroutines, 92 MiB/60 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 152.4 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 14 KiB/3.3 KiB (r/w)net
+I190605 22:26:09.011784 222 server/status/runtime.go:500  [n1] runtime stats: 210 MiB RSS, 174 goroutines, 98 MiB/54 MiB/169 MiB GO alloc/idle/total, 71 MiB/89 MiB CGO alloc/total, 268.7 CGO/sec, 2.1/1.4 %(u/s)time, 0.0 %gc (0x), 7.6 KiB/508 B (r/w)net
+I190605 22:26:16.261088 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:26:19.312533 222 server/status/runtime.go:500  [n1] runtime stats: 211 MiB RSS, 173 goroutines, 105 MiB/48 MiB/169 MiB GO alloc/idle/total, 71 MiB/89 MiB CGO alloc/total, 220.9 CGO/sec, 0.4/0.8 %(u/s)time, 0.0 %gc (0x), 128 B/0 B (r/w)net
+I190605 22:26:29.610213 222 server/status/runtime.go:500  [n1] runtime stats: 211 MiB RSS, 173 goroutines, 111 MiB/42 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 169.2 CGO/sec, 1.1/0.6 %(u/s)time, 0.0 %gc (0x), 2.5 KiB/4.1 KiB (r/w)net
+I190605 22:26:39.954519 222 server/status/runtime.go:500  [n1] runtime stats: 211 MiB RSS, 173 goroutines, 117 MiB/37 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 187.1 CGO/sec, 0.3/1.2 %(u/s)time, 0.0 %gc (0x), 85 KiB/5.6 KiB (r/w)net
+I190605 22:26:50.248768 222 server/status/runtime.go:500  [n1] runtime stats: 211 MiB RSS, 174 goroutines, 123 MiB/31 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 189.5 CGO/sec, 0.6/0.8 %(u/s)time, 0.0 %gc (0x), 126 KiB/4.6 KiB (r/w)net
+W190605 22:26:52.882188 197 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.6s [processed=1]
+I190605 22:27:00.562874 222 server/status/runtime.go:500  [n1] runtime stats: 211 MiB RSS, 174 goroutines, 129 MiB/25 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 169.8 CGO/sec, 0.4/0.3 %(u/s)time, 0.0 %gc (0x), 212 B/192 B (r/w)net
+I190605 22:27:10.871842 222 server/status/runtime.go:500  [n1] runtime stats: 212 MiB RSS, 174 goroutines, 135 MiB/19 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 176.0 CGO/sec, 0.3/0.6 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I190605 22:27:16.256388 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:27:21.171089 222 server/status/runtime.go:500  [n1] runtime stats: 212 MiB RSS, 173 goroutines, 141 MiB/13 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 207.9 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 14 KiB/7.6 KiB (r/w)net
+I190605 22:27:31.477389 222 server/status/runtime.go:500  [n1] runtime stats: 212 MiB RSS, 173 goroutines, 147 MiB/6.8 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 187.7 CGO/sec, 0.3/0.4 %(u/s)time, 0.0 %gc (1x), 6.4 KiB/3.1 KiB (r/w)net
+I190605 22:27:41.773741 222 server/status/runtime.go:500  [n1] runtime stats: 213 MiB RSS, 173 goroutines, 81 MiB/70 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 168.3 CGO/sec, 0.9/0.8 %(u/s)time, 0.0 %gc (0x), 234 B/319 B (r/w)net
+I190605 22:27:52.084497 222 server/status/runtime.go:500  [n1] runtime stats: 213 MiB RSS, 174 goroutines, 88 MiB/64 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 193.7 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 11 KiB/5.0 KiB (r/w)net
+I190605 22:28:02.393598 222 server/status/runtime.go:500  [n1] runtime stats: 213 MiB RSS, 174 goroutines, 94 MiB/58 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 186.1 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 1001 B/399 B (r/w)net
+I190605 22:28:12.692827 222 server/status/runtime.go:500  [n1] runtime stats: 213 MiB RSS, 174 goroutines, 100 MiB/53 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 165.2 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 3.3 KiB/7.4 KiB (r/w)net
+I190605 22:28:16.261602 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:28:23.003359 222 server/status/runtime.go:500  [n1] runtime stats: 214 MiB RSS, 173 goroutines, 106 MiB/47 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 212.0 CGO/sec, 0.8/0.9 %(u/s)time, 0.0 %gc (0x), 4.6 KiB/2.1 KiB (r/w)net
+I190605 22:28:33.299733 222 server/status/runtime.go:500  [n1] runtime stats: 214 MiB RSS, 173 goroutines, 112 MiB/41 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 180.5 CGO/sec, 0.5/0.8 %(u/s)time, 0.0 %gc (0x), 784 B/146 B (r/w)net
+I190605 22:28:43.599085 222 server/status/runtime.go:500  [n1] runtime stats: 214 MiB RSS, 173 goroutines, 118 MiB/35 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 183.0 CGO/sec, 0.6/0.1 %(u/s)time, 0.0 %gc (0x), 18 KiB/2.0 KiB (r/w)net
+I190605 22:28:53.913887 222 server/status/runtime.go:500  [n1] runtime stats: 214 MiB RSS, 174 goroutines, 125 MiB/29 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 174.7 CGO/sec, 1.1/1.1 %(u/s)time, 0.0 %gc (0x), 6.9 KiB/1.7 KiB (r/w)net
+I190605 22:29:04.217680 222 server/status/runtime.go:500  [n1] runtime stats: 214 MiB RSS, 174 goroutines, 131 MiB/23 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 183.3 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 23 KiB/12 KiB (r/w)net
+I190605 22:29:14.519086 222 server/status/runtime.go:500  [n1] runtime stats: 215 MiB RSS, 174 goroutines, 137 MiB/17 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 176.3 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 4.0 KiB/2.4 KiB (r/w)net
+I190605 22:29:16.254920 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E190605 22:29:16.794679 30 storage/queue.go:930  [n1,replicate] 26 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+I190605 22:29:24.820108 222 server/status/runtime.go:500  [n1] runtime stats: 215 MiB RSS, 173 goroutines, 143 MiB/11 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 233.9 CGO/sec, 1.4/0.6 %(u/s)time, 0.0 %gc (1x), 44 KiB/56 KiB (r/w)net
+I190605 22:29:26.260070 217 storage/store.go:4204  [n1,s1] sstables (read amplification = 1):
+6 [ 9M 3 ]: 4M[2] 1M
+I190605 22:29:26.260142 217 storage/store.go:4205  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.0         2         1    1.887       0      0
+  L6      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0     -0.0       0.0  84.0      5.4      5.4         2         1    1.761     31K    470
+ Sum      3/0    9.47 MB   0.0      0.0     0.0      0.0       0.0      0.0       0.0 409.5      2.6      2.6         4         2    1.824     31K    470
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0         0         0    0.000       0      0
+Uptime(secs): 1812.3 total, 599.9 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.01 GB write, 0.01 MB/s write, 0.01 GB read, 0.01 MB/s read, 3.6 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+W190605 22:29:27.204922 129 storage/store.go:3692  [n1,s1,r41/1:/System{/tsd/cr.s…-tse}] handle raft ready: 0.5s [processed=1]
+W190605 22:29:27.205114 125 storage/store.go:3692  [n1,s1,r54/1:/System/tsd/cr.{node.…-store…}] handle raft ready: 0.5s [processed=1]
+W190605 22:29:27.207345 176 storage/store.go:3692  [n1,s1,r4/1:/System/tsd{-/cr.nod…}] handle raft ready: 0.5s [processed=1]
+I190605 22:29:35.129591 222 server/status/runtime.go:500  [n1] runtime stats: 215 MiB RSS, 173 goroutines, 78 MiB/72 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 176.4 CGO/sec, 1.5/1.1 %(u/s)time, 0.0 %gc (0x), 6.9 KiB/888 B (r/w)net
+I190605 22:29:45.430366 222 server/status/runtime.go:500  [n1] runtime stats: 215 MiB RSS, 173 goroutines, 85 MiB/66 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 171.2 CGO/sec, 1.1/0.9 %(u/s)time, 0.0 %gc (0x), 9.3 KiB/543 B (r/w)net
+I190605 22:29:55.734639 222 server/status/runtime.go:500  [n1] runtime stats: 215 MiB RSS, 174 goroutines, 91 MiB/60 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 187.5 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 3.2 KiB/382 B (r/w)net
+I190605 22:30:06.035641 222 server/status/runtime.go:500  [n1] runtime stats: 215 MiB RSS, 174 goroutines, 97 MiB/55 MiB/169 MiB GO alloc/idle/total, 71 MiB/88 MiB CGO alloc/total, 177.7 CGO/sec, 0.2/0.3 %(u/s)time, 0.0 %gc (0x), 2.5 KiB/7.1 KiB (r/w)net
+I190605 22:30:16.261343 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:30:16.344417 222 server/status/runtime.go:500  [n1] runtime stats: 216 MiB RSS, 174 goroutines, 104 MiB/49 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 188.8 CGO/sec, 0.3/0.6 %(u/s)time, 0.0 %gc (0x), 332 B/479 B (r/w)net
+I190605 22:30:26.641636 222 server/status/runtime.go:500  [n1] runtime stats: 216 MiB RSS, 173 goroutines, 116 MiB/37 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 223.9 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 310 B/65 B (r/w)net
+I190605 22:30:36.932097 222 server/status/runtime.go:500  [n1] runtime stats: 216 MiB RSS, 173 goroutines, 122 MiB/32 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 200.5 CGO/sec, 0.5/0.4 %(u/s)time, 0.0 %gc (0x), 276 B/267 B (r/w)net
+I190605 22:30:47.222649 222 server/status/runtime.go:500  [n1] runtime stats: 217 MiB RSS, 174 goroutines, 128 MiB/26 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 223.4 CGO/sec, 1.5/1.5 %(u/s)time, 0.0 %gc (0x), 6.9 KiB/3.7 KiB (r/w)net
+I190605 22:30:57.523552 222 server/status/runtime.go:500  [n1] runtime stats: 217 MiB RSS, 175 goroutines, 134 MiB/20 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 181.0 CGO/sec, 0.1/0.5 %(u/s)time, 0.0 %gc (0x), 250 B/471 B (r/w)net
+W190605 22:31:00.619844 148 storage/store.go:3692  [n1,s1,r2/1:/System/NodeLiveness{-Max}] handle raft ready: 0.9s [processed=1]
+I190605 22:31:07.822557 222 server/status/runtime.go:500  [n1] runtime stats: 217 MiB RSS, 174 goroutines, 140 MiB/14 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 166.2 CGO/sec, 0.8/0.4 %(u/s)time, 0.0 %gc (0x), 374 B/397 B (r/w)net
+I190605 22:31:16.254450 218 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190605 22:31:18.151521 222 server/status/runtime.go:500  [n1] runtime stats: 217 MiB RSS, 173 goroutines, 147 MiB/7.4 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 228.8 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I190605 22:31:28.476881 222 server/status/runtime.go:500  [n1] runtime stats: 218 MiB RSS, 173 goroutines, 80 MiB/71 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 178.6 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 511 B/296 B (r/w)net
+I190605 22:31:38.806896 222 server/status/runtime.go:500  [n1] runtime stats: 218 MiB RSS, 173 goroutines, 87 MiB/64 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 169.7 CGO/sec, 0.8/0.9 %(u/s)time, 0.0 %gc (0x), 5.0 KiB/2.2 KiB (r/w)net
+I190605 22:31:49.133049 222 server/status/runtime.go:500  [n1] runtime stats: 218 MiB RSS, 174 goroutines, 94 MiB/58 MiB/169 MiB GO alloc/idle/total, 70 MiB/88 MiB CGO alloc/total, 181.7 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 246 B/207 B (r/w)net

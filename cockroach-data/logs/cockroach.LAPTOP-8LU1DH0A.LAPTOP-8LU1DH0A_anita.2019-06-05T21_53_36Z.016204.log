@@ -1,0 +1,36 @@
+I190605 21:53:36.047792 1 util/log/clog.go:1199  [config] file created at: 2019/06/05 21:53:36
+I190605 21:53:36.047792 1 util/log/clog.go:1199  [config] running on machine: LAPTOP-8LU1DH0A
+I190605 21:53:36.047792 1 util/log/clog.go:1199  [config] binary: CockroachDB CCL v19.1.1 (x86_64-w64-mingw32, built 2019/05/15 20:36:28, go1.11.6)
+I190605 21:53:36.047792 1 util/log/clog.go:1199  [config] arguments: [cockroach start --insecure]
+I190605 21:53:36.047792 1 util/log/clog.go:1199  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I190605 21:53:36.028120 1 cli/start.go:1033  logging to directory C:\Users\anita\cockroach-data\logs
+W190605 21:53:36.069295 1 cli/start.go:1068  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.1/secure-a-cluster.html
+W190605 21:53:36.356390 1 cli/start.go:944  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (3.0 GiB).
+W190605 21:53:36.356440 1 cli/start.go:957  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (3.0 GiB).
+I190605 21:53:36.356450 1 cli/start.go:1082  CockroachDB CCL v19.1.1 (x86_64-w64-mingw32, built 2019/05/15 20:36:28, go1.11.6)
+I190605 21:53:36.697229 1 server/config.go:386  system total memory: 12 GiB
+I190605 21:53:36.697938 1 server/config.go:388  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I190605 21:53:36.697995 1 cli/start.go:929  process identity: uid S-1-5-21-1277130278-1379351995-3284735411-1001, gid S-1-5-21-1277130278-1379351995-3284735411-1001
+I190605 21:53:36.702535 1 cli/start.go:554  starting cockroach node
+I190605 21:53:37.101533 27 storage/engine/rocksdb.go:613  opening rocksdb instance at "C:\\Users\\anita\\cockroach-data\\cockroach-temp237643031"
+I190605 21:53:40.781041 27 server/server.go:879  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+E190605 21:53:40.856838 1 cli/error.go:229  cockroach server exited with error: consider changing the port via --http-addr: listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+Error: cockroach server exited with error: consider changing the port via --http-addr: listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
