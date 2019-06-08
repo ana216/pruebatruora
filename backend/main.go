@@ -41,7 +41,7 @@ func GetDomainServersEndpoint(w http.ResponseWriter, req *http.Request) {
 
 }
 
-//GetDomainsReviewedEndpoint allows to get information about all the domains that have been checked
+//GetDomainsReviewedEndpoint allows to get information about all domains that have been checked
 func GetDomainsReviewedEndpoint(w http.ResponseWriter, req *http.Request) {
 
 	//retrieve all domains
