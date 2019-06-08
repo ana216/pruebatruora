@@ -8,7 +8,8 @@ import (
 
 //Testing the endpoint about get info of specific domain
 func TestGetDomainServersEndpoint(t *testing.T) {
-	req, err := http.NewRequest("GET", "/servers/truora.com", nil)
+	payload := bytes.NewBufferString("truora.com")
+	req, err := http.NewRequest("GET", "/servers/", payload)
 	if err != nil {
 		t.Fatal(err)
 	}
