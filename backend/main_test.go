@@ -23,7 +23,7 @@ func TestGetDomainServersEndpoint(t *testing.T) {
 	}
 
 }
-
+//Testing the endpoint about get info of all domains recently searched
 func TestGetDomainsReviewedEndpoint(t *testing.T) {
 	req, err := http.NewRequest("GET", "/servers/alldomains", nil)
 	if err != nil {
